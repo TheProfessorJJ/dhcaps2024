@@ -1,0 +1,13 @@
+User-agent: *
+Disallow: /author/
+Disallow: /category/
+Disallow: /comments/
+Disallow: /feed/
+Disallow: /wp-includes/
+Disallow: /wp-content/
+Disallow: /hats-and-caps/
+Disallow: /news/
+Disallow: /t-shirts/
+Disallow: /eco-friendly-shopping-bags/
+
+Sitemap: https://www.dhcaps.com/sitemap_index.xml
