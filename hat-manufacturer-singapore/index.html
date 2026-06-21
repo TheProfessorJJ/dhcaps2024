@@ -201,6 +201,7 @@ gtag("config", "G-PQGW4M714C");</script>
   width: 600px; height: 600px;
   background: radial-gradient(circle, rgba(232,184,75,0.12) 0%, transparent 70%);
   pointer-events: none;
+  z-index: 0;
 }
 .sg-hero-inner {
   display: grid;
@@ -353,7 +354,7 @@ gtag("config", "G-PQGW4M714C");</script>
 .sg-why-num {
   font-family: 'Prata', Georgia, serif;
   font-size: 3rem;
-  color: #efefef;
+  color: rgba(232,184,75,0.22);
   line-height: 1;
   margin-bottom: 16px;
 }
@@ -382,8 +383,8 @@ gtag("config", "G-PQGW4M714C");</script>
 .sg-product-img img { width: 100%; height: 100%; object-fit: contain; transition: transform .3s; }
 .sg-product-card:hover .sg-product-img img { transform: scale(1.05); }
 .sg-product-info { padding: 14px 16px 18px; }
-.sg-product-name { font-weight: 700; font-size: .88rem; margin-bottom: 4px; }
-.sg-product-desc { font-size: .78rem; color: #999; line-height: 1.5; margin: 0; }
+.sg-product-name { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 600; font-size: .85rem; margin-bottom: 4px; letter-spacing: -.01em; color: #1a1a1a; }
+.sg-product-desc { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: .75rem; color: #666; line-height: 1.5; margin: 0; letter-spacing: 0; }
 
 /* ── Process ── */
 .sg-process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
@@ -417,7 +418,7 @@ gtag("config", "G-PQGW4M714C");</script>
 .sg-spec-table tr { border-bottom: 1px solid #efefef; }
 .sg-spec-table tr:last-child { border-bottom: none; }
 .sg-spec-table td { padding: 16px 0; vertical-align: top; font-size: .92rem; }
-.sg-spec-table td:first-child { color: #999; width: 44%; padding-right: 16px; font-size: .85rem; text-transform: uppercase; letter-spacing: .06em; }
+.sg-spec-table td:first-child { color: #555; width: 44%; padding-right: 16px; font-size: .85rem; text-transform: uppercase; letter-spacing: .06em; }
 .sg-spec-table td:last-child { color: #1a1a1a; font-weight: 500; }
 .sg-terms-visual {
   background: #0d0f14;
@@ -432,6 +433,7 @@ gtag("config", "G-PQGW4M714C");</script>
   bottom: -60px; right: -60px;
   width: 240px; height: 240px;
   background: radial-gradient(circle, rgba(232,184,75,.15) 0%, transparent 70%);
+  pointer-events: none;
 }
 .sg-terms-visual-label { font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; color: #e8b84b; margin-bottom: 24px; }
 .sg-terms-visual-item { padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,.06); }
@@ -464,7 +466,7 @@ gtag("config", "G-PQGW4M714C");</script>
   margin-left: 16px;
 }
 .sg-faq details[open] summary::after { content: '–'; }
-.sg-faq details p { padding: 0 0 20px; margin: 0; color: #666; font-size: .9rem; line-height: 1.7; }
+.sg-faq details p { padding: 0 0 20px; margin: 0; color: #444; font-size: .9rem; line-height: 1.7; }
 
 /* ── CTA ── */
 .sg-cta {
@@ -480,6 +482,7 @@ gtag("config", "G-PQGW4M714C");</script>
   top: 50%; left: 50%; transform: translate(-50%, -50%);
   width: 800px; height: 400px;
   background: radial-gradient(ellipse, rgba(232,184,75,.08) 0%, transparent 70%);
+  pointer-events: none;
 }
 .sg-cta-label { font-size: .75rem; letter-spacing: .18em; text-transform: uppercase; color: #e8b84b; margin-bottom: 20px; display: block; }
 .sg-cta-h2 {
@@ -490,9 +493,9 @@ gtag("config", "G-PQGW4M714C");</script>
   margin: 0 0 16px;
   line-height: 1.2;
 }
-.sg-cta-sub { color: #666; font-size: .95rem; margin: 0 0 40px; }
+.sg-cta-sub { color: #bbb; font-size: .95rem; margin: 0 0 40px; }
 .sg-cta-pills { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 40px; }
-.sg-cta-pill { font-size: .75rem; color: #888; border: 1px solid rgba(255,255,255,.1); padding: 6px 14px; border-radius: 100px; }
+.sg-cta-pill { font-size: .75rem; color: #bbb; border: 1px solid rgba(255,255,255,.25); padding: 6px 14px; border-radius: 100px; }
 .sg-cta-btns { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
 
 /* ── Hide WA bubble ── */
@@ -888,7 +891,7 @@ gtag("config", "G-PQGW4M714C");</script>
     <div class="sg-product-grid">
       
       <a href="/products/snapback-hats/" class="sg-product-card">
-        <div class="sg-product-img" style="background:#FFF8E8;">
+        <div class="sg-product-img" style="background:#f5f5f3;">
           <img src="https://www.dhcaps.com/wp-content/uploads/2024/05/Website-hat-photo-10-1024x1024.webp" alt="Snapback Hats manufacturer Bangladesh" loading="lazy">
         </div>
         <div class="sg-product-info">
@@ -897,7 +900,7 @@ gtag("config", "G-PQGW4M714C");</script>
         </div>
       </a>
       <a href="/products/trucker-mesh/" class="sg-product-card">
-        <div class="sg-product-img" style="background:#EEF7EE;">
+        <div class="sg-product-img" style="background:#f5f5f3;">
           <img src="https://www.dhcaps.com/wp-content/uploads/2024/05/Hat-Category-Photo-3-1024x1024.webp" alt="Classic Trucker Mesh manufacturer Bangladesh" loading="lazy">
         </div>
         <div class="sg-product-info">
@@ -906,7 +909,7 @@ gtag("config", "G-PQGW4M714C");</script>
         </div>
       </a>
       <a href="/products/cotton-sports-cap/" class="sg-product-card">
-        <div class="sg-product-img" style="background:#EEF2FF;">
+        <div class="sg-product-img" style="background:#f5f5f3;">
           <img src="https://www.dhcaps.com/wp-content/uploads/2024/06/Structured-Sports-Hat-10-1024x1024.webp" alt="Cotton Sports Cap manufacturer Bangladesh" loading="lazy">
         </div>
         <div class="sg-product-info">
@@ -915,7 +918,7 @@ gtag("config", "G-PQGW4M714C");</script>
         </div>
       </a>
       <a href="/products/pigment-dyed-washed-hats/" class="sg-product-card">
-        <div class="sg-product-img" style="background:#FFF0F0;">
+        <div class="sg-product-img" style="background:#f5f5f3;">
           <img src="https://www.dhcaps.com/wp-content/uploads/2024/05/Hats-Category-4-1024x1024.webp" alt="Pigment Dyed Washed manufacturer Bangladesh" loading="lazy">
         </div>
         <div class="sg-product-info">
@@ -924,7 +927,7 @@ gtag("config", "G-PQGW4M714C");</script>
         </div>
       </a>
       <a href="/products/polyester-hats-with-sublimation-print/" class="sg-product-card">
-        <div class="sg-product-img" style="background:#F0F7FF;">
+        <div class="sg-product-img" style="background:#f5f5f3;">
           <img src="https://www.dhcaps.com/wp-content/uploads/2024/05/Hat-Category-Photo-1-1024x1024.webp" alt="Sublimation Print manufacturer Bangladesh" loading="lazy">
         </div>
         <div class="sg-product-info">
