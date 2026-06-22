@@ -37,6 +37,9 @@
 <link rel="dns-prefetch" href="//translate.google.com">
 <link rel="dns-prefetch" href="//www.googletagmanager.com">
 <link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 <link rel="alternate" type="application/rss+xml" title="Dhaka Hats &amp; Caps &raquo; Feed" href="https://www.dhcaps.com/feed/">
 <link rel="alternate" type="application/rss+xml" title="Dhaka Hats &amp; Caps &raquo; Comments Feed" href="https://www.dhcaps.com/comments/feed/">
 <script>
@@ -501,22 +504,1098 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')dhcapsCloseD
 	<main id="content" class="neve-main">
 
 		<div data-elementor-type="wp-page" data-elementor-id="29" class="elementor elementor-29" data-elementor-post-type="page">
-						<section class="elementor-section elementor-top-section elementor-element elementor-element-2e1c32a elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="2e1c32a" data-element_type="section">
-						<div class="elementor-container elementor-column-gap-default">
-					<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-6908381" data-id="6908381" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-839b6d8 elementor-widget elementor-widget-heading" data-id="839b6d8" data-element_type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-			<h1 class="elementor-heading-title elementor-size-default">Our Hat Factory in Dhaka, Bangladesh</h1>		</div>
-				</div>
-					</div>
-		</div>
-				<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-3c3823a" data-id="3c3823a" data-element_type="column">
-			<div class="elementor-widget-wrap">
-							</div>
-		</div>
-					</div>
-		</section>
+
+<!-- ============================================================
+     SECTION 1 — HERO  (Rendition D — radial glow + dot grid + gold geometry)
+     ============================================================ -->
+<style>
+:root {
+  --fp-navy:   #0B1D3A;
+  --fp-navy2:  #1B5FC4;
+  --fp-navy3:  #1B3D6F;
+  --fp-gold:   #1B5FC4;
+  --fp-gold-h: #5A9FE3;
+  --fp-gold-d: #1043A0;
+  --fp-white:  #FAFAF7;
+  --fp-muted:  rgba(250,250,247,.72);
+  --fp-faint:  rgba(250,250,247,.42);
+  /* Palette C tokens */
+  --linen:     #EBF2FB;
+  --linen-w:   #DCE9F7;
+  --linen-b:   #B8CEE8;
+  --bronze:    #1B5FC4;
+  --bronze-lt: #5A9FE3;
+  --warm-dark: #0B1D3A;
+  --warm-mid:  #1B3D6F;
+  --text-ink:  #0C1A2E;
+  --text-warm: #2C4A6E;
+  --text-mute: #5A7A9E;
+}
+
+/* ── Wrapper ── */
+#fp-hero {
+  position: relative;
+  overflow: hidden;
+  font-family: 'Roboto', sans-serif;
+  /* Layered: diagonal gradient + deep blue radial + dark navy base */
+  background:
+    linear-gradient(135deg, #0A1628 0%, #0D2044 40%, #0B1D3A 60%, #071526 100%);
+}
+
+/* ── Multi-layer atmosphere ── */
+#fp-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    /* Strong spotlight from top-left */
+    radial-gradient(ellipse 70% 55% at 20% 0%, rgba(42,114,213,.28) 0%, transparent 55%),
+    /* Secondary warm glow top-right */
+    radial-gradient(ellipse 50% 40% at 80% 5%, rgba(90,159,227,.14) 0%, transparent 50%),
+    /* Deep bottom vignette */
+    radial-gradient(ellipse 100% 50% at 50% 110%, rgba(5,10,20,.85) 0%, transparent 65%),
+    /* Diagonal highlight band */
+    linear-gradient(118deg, rgba(27,95,196,.12) 0%, transparent 40%, rgba(11,61,111,.08) 60%, transparent 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Dot grid + diagonal line mesh ── */
+#fp-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    /* Fine diagonal lines */
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 34px,
+      rgba(90,159,227,.04) 34px,
+      rgba(90,159,227,.04) 35px
+    ),
+    /* Dot grid */
+    radial-gradient(circle, rgba(90,159,227,.12) 1px, transparent 1px);
+  background-size: auto, 28px 28px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── Gold geometry SVG canvas ── */
+#fp-hero-geo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* ── All content sits above layers ── */
+#fp-hero .fp-inner {
+  position: relative;
+  z-index: 10;
+}
+
+/* ── Trust bar ── */
+#fp-hero .fp-trust-bar {
+  background: rgba(0,0,0,.2);
+  border-bottom: 1px solid rgba(90,159,227,.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  padding: 10px 24px;
+  flex-wrap: wrap;
+}
+#fp-hero .fp-trust-bar span {
+  font-size: 10.5px;
+  font-weight: 500;
+  color: rgba(250,250,247,.55);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  font-family: 'Roboto', sans-serif;
+}
+#fp-hero .fp-trust-bar span::before {
+  content: '';
+  display: inline-block;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--bronze-lt);
+  opacity: .7;
+  flex-shrink: 0;
+}
+
+/* ── Main body ── */
+#fp-hero .fp-body {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 88px 24px 76px;
+  text-align: center;
+}
+
+/* ── Corner marks ── */
+#fp-hero .fp-corner {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-color: rgba(90,159,227,.28);
+  border-style: solid;
+}
+#fp-hero .fp-corner-tl { top: 88px; left: calc(50% - 400px + 24px); border-width: 1px 0 0 1px; }
+#fp-hero .fp-corner-tr { top: 88px; right: calc(50% - 400px + 24px); border-width: 1px 1px 0 0; }
+
+/* ── Eyebrow ── */
+#fp-hero .fp-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .32em;
+  text-transform: uppercase;
+  color: var(--bronze-lt);
+  display: block;
+  margin: 0 0 26px;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* ── Headline ── */
+#fp-hero h1 {
+  font-family: 'Prata', Georgia, serif;
+  font-size: clamp(2rem, 4.8vw, 3.2rem);
+  font-weight: 400;
+  color: var(--fp-white);
+  line-height: 1.22;
+  margin: 0 0 10px;
+}
+#fp-hero h1 em {
+  font-style: normal;
+  color: var(--bronze-lt);
+}
+
+/* ── Divider with diamond ── */
+#fp-hero .fp-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 28px auto 28px;
+}
+#fp-hero .fp-divider-line {
+  width: 48px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(90,159,227,.4));
+}
+#fp-hero .fp-divider-line:last-child {
+  background: linear-gradient(90deg, rgba(90,159,227,.4), transparent);
+}
+#fp-hero .fp-divider-diamond {
+  width: 6px;
+  height: 6px;
+  border: 1px solid rgba(90,159,227,.55);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+
+/* ── Subhead ── */
+#fp-hero .fp-subhead {
+  font-size: clamp(.9rem, 1.9vw, 1.05rem);
+  color: var(--fp-muted);
+  line-height: 1.82;
+  margin: 0 0 42px;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ── CTAs ── */
+#fp-hero .fp-ctas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin: 0 0 38px;
+}
+#fp-hero .fp-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  background: var(--bronze);
+  color: #FAFAF7;
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  padding: 16px 44px;
+  border-radius: 1px;
+  text-decoration: none;
+  transition: background .18s, transform .15s, box-shadow .18s;
+  min-height: 52px;
+  box-shadow: 0 4px 20px rgba(27,95,196,.28);
+}
+#fp-hero .fp-btn-primary:hover {
+  background: var(--bronze-lt);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 28px rgba(27,95,196,.32);
+}
+#fp-hero .fp-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: rgba(250,250,247,.72);
+  border: 1px solid rgba(90,159,227,.32);
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .06em;
+  padding: 15px 28px;
+  border-radius: 1px;
+  text-decoration: none;
+  transition: border-color .18s, color .18s, transform .15s;
+  min-height: 52px;
+}
+#fp-hero .fp-btn-secondary:hover { border-color: rgba(90,159,227,.65); color: var(--bronze-lt); transform: translateY(-1px); }
+
+/* ── Bullet list ── */
+#fp-hero .fp-bullets {
+  list-style: none;
+  margin: 0 0 38px;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 28px;
+}
+#fp-hero .fp-bullets li {
+  font-size: 12.5px;
+  font-weight: 400;
+  color: rgba(250,250,247,.78);
+  letter-spacing: .02em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Roboto', sans-serif;
+}
+#fp-hero .fp-bullets li::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  background: var(--bronze-lt);
+  flex-shrink: 0;
+}
+
+/* ── Footnote ── */
+#fp-hero .fp-footnote {
+  font-size: 10px;
+  color: rgba(250,250,247,.3);
+  letter-spacing: .04em;
+  line-height: 1.7;
+  margin-bottom: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  #fp-hero .fp-corner-tl,
+  #fp-hero .fp-corner-tr { display: none; }
+}
+@media (max-width: 640px) {
+  #fp-hero .fp-trust-bar { gap: 14px; }
+  #fp-hero .fp-body { padding: 60px 20px 52px; }
+}
+</style>
+
+<section id="fp-hero" aria-label="DHCAPS Factory Profile">
+
+  <!-- Gold geometry SVG -->
+  <svg id="fp-hero-geo" viewBox="0 0 1440 640" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <!-- Diagonal cross-lines -->
+    <line x1="0" y1="0" x2="360" y2="640" stroke="rgba(255,255,255,.07)" stroke-width="1"/>
+    <line x1="1440" y1="0" x2="1080" y2="640" stroke="rgba(255,255,255,.07)" stroke-width="1"/>
+    <!-- Horizontal accent lines -->
+    <line x1="0" y1="160" x2="380" y2="160" stroke="rgba(255,255,255,.06)" stroke-width="1"/>
+    <line x1="1060" y1="160" x2="1440" y2="160" stroke="rgba(255,255,255,.06)" stroke-width="1"/>
+    <!-- Corner bracket — top left -->
+    <path d="M60,40 L60,100 M60,40 L140,40" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="1.5"/>
+    <!-- Corner bracket — top right -->
+    <path d="M1380,40 L1380,100 M1380,40 L1300,40" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="1.5"/>
+    <!-- Corner bracket — bottom left -->
+    <path d="M60,600 L60,540 M60,600 L140,600" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="1"/>
+    <!-- Corner bracket — bottom right -->
+    <path d="M1380,600 L1380,540 M1380,600 L1300,600" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="1"/>
+    <!-- Centre diamond -->
+    <!-- Left accent cluster -->
+    <rect x="92" y="280" width="40" height="1" fill="rgba(255,255,255,.08)"/>
+    <rect x="92" y="288" width="20" height="1" fill="rgba(255,255,255,.05)"/>
+    <!-- Right accent cluster -->
+    <rect x="1308" y="280" width="40" height="1" fill="rgba(255,255,255,.08)"/>
+    <rect x="1328" y="288" width="20" height="1" fill="rgba(255,255,255,.05)"/>
+  </svg>
+
+  <div class="fp-inner">
+
+
+    <!-- Corner marks -->
+    <div class="fp-corner fp-corner-tl" aria-hidden="true"></div>
+    <div class="fp-corner fp-corner-tr" aria-hidden="true"></div>
+
+    <!-- Main content -->
+    <div class="fp-body">
+      <span class="fp-eyebrow">Factory Overview &mdash; Dhaka, Bangladesh</span>
+
+      <h1>Custom Headwear Manufacturing<br>for <em>Global Brands Since 1998.</em></h1>
+
+      <div class="fp-divider" aria-hidden="true">
+        <div class="fp-divider-line"></div>
+        <div class="fp-divider-diamond"></div>
+        <div class="fp-divider-line"></div>
+      </div>
+
+      <p class="fp-subhead">
+        Since 1998, Dhaka Hats &amp; Caps has manufactured promotional, corporate, and private-label headwear for buyers worldwide from our dedicated facility in Dhaka.
+      </p>
+
+      <ul class="fp-bullets" aria-label="Key capabilities">
+        <li>10,000 pcs/day production capacity</li>
+        <li>In-house quality control at every stage</li>
+        <li>24-hour response time — guaranteed</li>
+        <li>Global shipping: FOB &amp; CFR available</li>
+        <li>DCCI Member — Dhaka Chamber of Commerce</li>
+      </ul>
+
+      <div class="fp-ctas">
+        <a href="https://contact.dhcaps.com/" class="fp-btn-primary" aria-label="Get factory pricing from Dhaka Hats &amp; Caps">
+          Get Factory Pricing
+        </a>
+        <a href="https://wa.me/+8801711525227" class="fp-btn-secondary" aria-label="Contact Dhaka Hats &amp; Caps on WhatsApp">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="#25D366" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.121.554 4.112 1.523 5.843L0 24l6.335-1.508A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.366l-.36-.214-3.726.887.903-3.63-.235-.373A9.818 9.818 0 1112 21.818z"/></svg>
+          WhatsApp Us
+        </a>
+      </div>
+
+      <p class="fp-footnote">We ship worldwide — USA · Canada · Russia · Pakistan · Europe · Singapore · Malaysia · Philippines<br>UAE · Saudi Arabia · Qatar · Kuwait · Bahrain &amp; more</p>
+    </div>
+
+
+  </div><!-- /.fp-inner -->
+
+</section>
+<!-- ============================================================
+     SECTION 2 — FACTORY SPECIFICATIONS  (redesigned: dossier)
+     ============================================================ -->
+<style>
+#fp-specs {
+  background: var(--linen, #FAFAF7);
+  padding: 96px 24px 104px;
+  font-family: 'Roboto', sans-serif;
+}
+#fp-specs .fp-specs-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ── Section header ── */
+#fp-specs .fp-section-label {
+  text-align: center;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .32em;
+  text-transform: uppercase;
+  color: var(--bronze, #8B6914);
+  margin: 0 0 14px;
+  font-family: 'Roboto', sans-serif;
+}
+#fp-specs .fp-section-title {
+  text-align: center;
+  font-family: 'Prata', Georgia, serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+  font-weight: 400;
+  color: var(--text-ink, #1A1208);
+  margin: 0 0 16px;
+  line-height: 1.25;
+}
+#fp-specs .fp-section-sub {
+  text-align: center;
+  font-size: 14.5px;
+  color: var(--text-warm, #5A4A32);
+  margin: 0 0 56px;
+  line-height: 1.7;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* ── KPI Banner ── */
+#fp-specs .fp-kpi-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--linen-b, #DDD5C4);
+  border: 1px solid var(--linen-b, #DDD5C4);
+  margin-bottom: 40px;
+}
+#fp-specs .fp-kpi {
+  background: #FFFFFF;
+  padding: 28px 24px 26px;
+  text-align: center;
+}
+#fp-specs .fp-kpi-num {
+  display: block;
+  font-family: 'Prata', Georgia, serif;
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  font-weight: 400;
+  color: var(--text-ink, #1A1208);
+  line-height: 1.1;
+  margin-bottom: 6px;
+  font-variant-numeric: tabular-nums;
+}
+#fp-specs .fp-kpi-num em {
+  color: var(--bronze, #8B6914);
+  font-style: normal;
+}
+#fp-specs .fp-kpi-label {
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--text-mute, #7A6A58);
+  font-family: 'Roboto', sans-serif;
+}
+
+/* ── Production timeline card ── */
+#fp-specs .fp-timeline-card {
+  background: var(--warm-dark, #2C1A08);
+  padding: 36px 40px 40px;
+  margin-bottom: 24px;
+  position: relative;
+  overflow: hidden;
+}
+#fp-specs .fp-timeline-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(90,159,227,.06) 1px, transparent 1px);
+  background-size: 24px 24px;
+  pointer-events: none;
+}
+#fp-specs .fp-timeline-card-inner { position: relative; z-index: 1; }
+#fp-specs .fp-timeline-card-hdr {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.78);
+  margin: 0 0 28px;
+  font-family: 'Roboto', sans-serif;
+}
+#fp-specs .fp-timeline {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+}
+#fp-specs .fp-tl-step {
+  flex: 1;
+  padding: 20px 24px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.1);
+  position: relative;
+}
+#fp-specs .fp-tl-step + .fp-tl-step {
+  border-left: none;
+}
+#fp-specs .fp-tl-step-num {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .18em;
+  color: rgba(90,159,227,.8);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 10px;
+  font-family: 'Roboto', sans-serif;
+}
+#fp-specs .fp-tl-step-title {
+  font-family: 'Prata', Georgia, serif;
+  font-size: .95rem;
+  font-weight: 400;
+  color: #ffffff;
+  margin: 0 0 6px;
+}
+#fp-specs .fp-tl-step-time {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--bronze-lt, #C4A55E);
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 8px;
+  font-family: 'Roboto', sans-serif;
+}
+#fp-specs .fp-tl-step-desc {
+  font-size: 12.5px;
+  color: rgba(255,255,255,.8);
+  line-height: 1.65;
+  font-family: 'Roboto', sans-serif;
+}
+/* Arrow connector */
+#fp-specs .fp-tl-arrow {
+  display: flex;
+  align-items: center;
+  padding: 0 2px;
+  color: rgba(255,255,255,.2);
+  font-size: 18px;
+  flex-shrink: 0;
+  align-self: center;
+  position: relative;
+  z-index: 2;
+  margin: 0 -1px;
+}
+
+/* ── Bottom grid: Order Terms + Workforce + Machinery ── */
+#fp-specs .fp-bottom-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.1fr;
+  gap: 24px;
+}
+#fp-specs .fp-data-card {
+  background: #FFFFFF;
+  border: 1px solid var(--linen-b, #DDD5C4);
+  box-shadow: 0 2px 12px rgba(11,29,58,.05);
+}
+#fp-specs .fp-data-card-hdr {
+  background: var(--warm-dark, #2C1A08);
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#fp-specs .fp-data-card-hdr-icon svg {
+  width: 14px;
+  height: 14px;
+  stroke: rgba(90,159,227,.9);
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  display: block;
+}
+#fp-specs .fp-data-card-hdr-title {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.78);
+}
+#fp-specs .fp-data-card-body { padding: 4px 0 8px; }
+#fp-specs .fp-data-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 9px 24px;
+  border-bottom: 1px solid var(--linen-b, #DDD5C4);
+  gap: 12px;
+}
+#fp-specs .fp-data-row:nth-child(odd) { background: var(--linen, #FAFAF7); }
+#fp-specs .fp-data-row:last-child { border-bottom: none; }
+#fp-specs .fp-data-key {
+  font-size: 12.5px;
+  color: #374151;
+  font-weight: 400;
+  flex-shrink: 0;
+  font-family: 'Roboto', sans-serif;
+}
+#fp-specs .fp-data-val {
+  font-size: 13px;
+  color: #111827;
+  font-weight: 600;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  font-family: 'Roboto', sans-serif;
+}
+#fp-specs .fp-data-val.fpg { color: var(--bronze, #8B6914); }
+
+/* Payment methods as chips */
+#fp-specs .fp-pay-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: flex-end;
+}
+#fp-specs .fp-pay-chip {
+  font-size: 10.5px;
+  font-weight: 500;
+  color: var(--text-ink, #1A1208);
+  background: var(--linen-w, #F5F0E8);
+  padding: 2px 8px;
+  border-radius: 1px;
+  letter-spacing: .03em;
+  border: 1px solid var(--linen-b, #DDD5C4);
+}
+
+/* Machinery card specifics */
+#fp-specs .fp-mach-total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px;
+  background: var(--linen-w, #F5F0E8);
+  border-bottom: 1px solid var(--linen-b, #DDD5C4);
+  margin-bottom: 0;
+}
+#fp-specs .fp-mach-total-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #374151;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  font-family: 'Roboto', sans-serif;
+}
+#fp-specs .fp-mach-total-num {
+  font-family: 'Prata', Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--bronze, #8B6914);
+}
+#fp-specs .fp-mach-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 0;
+}
+#fp-specs .fp-mach-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 24px;
+  border-bottom: 1px solid var(--linen-b, #DDD5C4);
+  border-right: 1px solid var(--linen-b, #DDD5C4);
+}
+#fp-specs .fp-mach-item:nth-child(even) { border-right: none; }
+#fp-specs .fp-mach-item:nth-last-child(-n+2) { border-bottom: none; }
+#fp-specs .fp-mach-name {
+  font-size: 12.5px;
+  color: #374151;
+  font-weight: 400;
+  font-family: 'Roboto', sans-serif;
+}
+#fp-specs .fp-mach-qty {
+  font-size: 13px;
+  font-weight: 700;
+  color: #111827;
+  font-variant-numeric: tabular-nums;
+  min-width: 28px;
+  text-align: right;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  #fp-specs .fp-bottom-grid { grid-template-columns: 1fr 1fr; }
+  #fp-specs .fp-bottom-grid .fp-data-card:last-child { grid-column: 1 / -1; }
+  #fp-specs .fp-mach-grid { grid-template-columns: repeat(4, 1fr); }
+  #fp-specs .fp-mach-item { border-right: 1px solid #B8CEE8; }
+  #fp-specs .fp-mach-item:nth-child(even) { border-right: 1px solid #B8CEE8; }
+  #fp-specs .fp-mach-item:nth-child(4n) { border-right: none; }
+}
+@media (max-width: 760px) {
+  #fp-specs .fp-kpi-bar { grid-template-columns: repeat(2, 1fr); }
+  #fp-specs .fp-timeline { flex-direction: column; }
+  #fp-specs .fp-tl-arrow { display: none; }
+  #fp-specs .fp-tl-step + .fp-tl-step { border-left: 1px solid rgba(255,255,255,.1); border-top: none; }
+  #fp-specs .fp-timeline-card { padding: 28px 24px 32px; }
+}
+@media (max-width: 640px) {
+  #fp-specs .fp-bottom-grid { grid-template-columns: 1fr; }
+  #fp-specs .fp-bottom-grid .fp-data-card:last-child { grid-column: auto; }
+  #fp-specs .fp-mach-grid { grid-template-columns: 1fr 1fr; }
+  #fp-specs .fp-mach-item:nth-child(4n) { border-right: 1px solid #B8CEE8; }
+  #fp-specs .fp-mach-item:nth-child(even) { border-right: none; }
+  #fp-specs { padding: 72px 20px 80px; }
+}
+</style>
+
+<section id="fp-specs" aria-label="Factory specifications">
+  <div class="fp-specs-inner">
+
+    <p class="fp-section-label">Verified Factory Data</p>
+    <h2 class="fp-section-title">Facility Specifications</h2>
+    <p class="fp-section-sub">Authoritative figures from our Dhaka production facility — updated for the current season.</p>
+
+    <!-- KPI Banner -->
+    <div class="fp-kpi-bar" role="list" aria-label="Key production figures" style="grid-template-columns:repeat(5,1fr)">
+      <div class="fp-kpi" role="listitem">
+        <span class="fp-kpi-num"><em>10,000</em></span>
+        <span class="fp-kpi-label">Pieces Per Day</span>
+      </div>
+      <div class="fp-kpi" role="listitem">
+        <span class="fp-kpi-num">164</span>
+        <span class="fp-kpi-label">Skilled Workers</span>
+      </div>
+      <div class="fp-kpi" role="listitem">
+        <span class="fp-kpi-num">28<em>+</em></span>
+        <span class="fp-kpi-label">Years in Operation</span>
+      </div>
+      <div class="fp-kpi" role="listitem">
+        <span class="fp-kpi-num">6,200</span>
+        <span class="fp-kpi-label">sqft Floor Area</span>
+      </div>
+      <div class="fp-kpi" role="listitem">
+        <span class="fp-kpi-num">20<em>+</em></span>
+        <span class="fp-kpi-label">Countries Served</span>
+      </div>
+    </div>
+
+    <!-- Production Timeline -->
+    <div class="fp-timeline-card">
+      <div class="fp-timeline-card-inner">
+        <p class="fp-timeline-card-hdr">Order &amp; Production Timeline</p>
+        <div class="fp-timeline" role="list" aria-label="Production stages">
+          <div class="fp-tl-step" role="listitem">
+            <span class="fp-tl-step-num">Stage 01</span>
+            <div class="fp-tl-step-title">Sample Development</div>
+            <div class="fp-tl-step-time">10–15 Days</div>
+            <div class="fp-tl-step-desc">Spec review, material sourcing, and prototype production. Revisions included before bulk approval.</div>
+          </div>
+          <div class="fp-tl-arrow" aria-hidden="true">&#8250;</div>
+          <div class="fp-tl-step" role="listitem">
+            <span class="fp-tl-step-num">Stage 02</span>
+            <div class="fp-tl-step-title">Bulk Production</div>
+            <div class="fp-tl-step-time">30–45 Days</div>
+            <div class="fp-tl-step-desc">Full factory run with inline QC at cutting, sewing, and finishing. Progress updates available on request.</div>
+          </div>
+          <div class="fp-tl-arrow" aria-hidden="true">&#8250;</div>
+          <div class="fp-tl-step" role="listitem">
+            <span class="fp-tl-step-num">Stage 03</span>
+            <div class="fp-tl-step-title">Final QC &amp; Shipment</div>
+            <div class="fp-tl-step-time">FOB &amp; CFR</div>
+            <div class="fp-tl-step-desc">Pre-shipment inspection, carton packing, and export documentation. Third-party audits welcome.</div>
+          </div>
+          <div class="fp-tl-arrow" aria-hidden="true">&#8250;</div>
+          <div class="fp-tl-step" role="listitem">
+            <span class="fp-tl-step-num">Payment</span>
+            <div class="fp-tl-step-title">Order Terms</div>
+            <div class="fp-tl-step-time">30–50% Advance</div>
+            <div class="fp-tl-step-desc">Balance on completion or before shipment. Accepted via TT, Western Union, or Wise.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom: Order Terms · Workforce · Machinery -->
+    <div class="fp-bottom-grid">
+
+      <!-- Order Terms -->
+      <div class="fp-data-card">
+        <div class="fp-data-card-hdr">
+          <span class="fp-data-card-hdr-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></span>
+          <span class="fp-data-card-hdr-title">Order Terms</span>
+        </div>
+        <div class="fp-data-card-body">
+          <div class="fp-data-row"><span class="fp-data-key">Daily Capacity</span><span class="fp-data-val fpg">10,000 pcs</span></div>
+          <div class="fp-data-row"><span class="fp-data-key">Annual Output</span><span class="fp-data-val">1,872,000 pcs</span></div>
+          <div class="fp-data-row"><span class="fp-data-key">Min. Order (MOQ)</span><span class="fp-data-val">144 pcs</span></div>
+          <div class="fp-data-row"><span class="fp-data-key">Sample Lead Time</span><span class="fp-data-val">10–15 days</span></div>
+          <div class="fp-data-row"><span class="fp-data-key">Production Lead Time</span><span class="fp-data-val">30–45 days</span></div>
+          <div class="fp-data-row"><span class="fp-data-key">Incoterms</span><span class="fp-data-val">FOB · CFR</span></div>
+          <div class="fp-data-row"><span class="fp-data-key">Advance Required</span><span class="fp-data-val fpg">30–50%</span></div>
+          <div class="fp-data-row">
+            <span class="fp-data-key">Accepted Via</span>
+            <span class="fp-data-val">
+              <span class="fp-pay-chips">
+                <span class="fp-pay-chip">TT</span>
+                <span class="fp-pay-chip">Western Union</span>
+                <span class="fp-pay-chip">Wise</span>
+              </span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Workforce -->
+      <div class="fp-data-card">
+        <div class="fp-data-card-hdr">
+          <span class="fp-data-card-hdr-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+          <span class="fp-data-card-hdr-title">Workforce &amp; Compliance</span>
+        </div>
+        <div class="fp-data-card-body">
+          <div class="fp-data-row"><span class="fp-data-key">Total Employees</span><span class="fp-data-val fpg">164</span></div>
+          <div class="fp-data-row"><span class="fp-data-key">Supervisors &amp; Engineers</span><span class="fp-data-val">4</span></div>
+          <div class="fp-data-row"><span class="fp-data-key">Linemen / QC</span><span class="fp-data-val">12</span></div>
+          <div class="fp-data-row"><span class="fp-data-key">Operators &amp; Helpers</span><span class="fp-data-val">148</span></div>
+          <div class="fp-data-row"><span class="fp-data-key">Worker Benefits</span><span class="fp-data-val">Food · Medical · Maternity</span></div>
+          <div class="fp-data-row"><span class="fp-data-key">Overtime Rate</span><span class="fp-data-val">200%</span></div>
+          <div class="fp-data-row"><span class="fp-data-key">DCCI Member</span><span class="fp-data-val fpg">Since 1998</span></div>
+          <div class="fp-data-row"><span class="fp-data-key">Factory Visits</span><span class="fp-data-val">Open to buyers</span></div>
+        </div>
+      </div>
+
+      <!-- Machinery -->
+      <div class="fp-data-card">
+        <div class="fp-data-card-hdr">
+          <span class="fp-data-card-hdr-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></span>
+          <span class="fp-data-card-hdr-title">Machinery Inventory</span>
+        </div>
+        <div class="fp-mach-total">
+          <span class="fp-mach-total-label">Total Units on Floor</span>
+          <span class="fp-mach-total-num">100</span>
+        </div>
+        <div class="fp-mach-grid">
+          <div class="fp-mach-item"><span class="fp-mach-name">Single Needle</span><span class="fp-mach-qty">46</span></div>
+          <div class="fp-mach-item"><span class="fp-mach-name">Double Needle</span><span class="fp-mach-qty">13</span></div>
+          <div class="fp-mach-item"><span class="fp-mach-name">Eyelet Machine</span><span class="fp-mach-qty">10</span></div>
+          <div class="fp-mach-item"><span class="fp-mach-name">Button Machine</span><span class="fp-mach-qty">5</span></div>
+          <div class="fp-mach-item"><span class="fp-mach-name">High Posta</span><span class="fp-mach-qty">4</span></div>
+          <div class="fp-mach-item"><span class="fp-mach-name">Proshtitch Machine</span><span class="fp-mach-qty">2</span></div>
+          <div class="fp-mach-item"><span class="fp-mach-name">Kansai Machine</span><span class="fp-mach-qty">2</span></div>
+          <div class="fp-mach-item"><span class="fp-mach-name">Overlock Machine</span><span class="fp-mach-qty">2</span></div>
+          <div class="fp-mach-item"><span class="fp-mach-name">Snap Button Machine</span><span class="fp-mach-qty">2</span></div>
+          <div class="fp-mach-item"><span class="fp-mach-name">Vertical Knife Machine</span><span class="fp-mach-qty">2</span></div>
+          <div class="fp-mach-item"><span class="fp-mach-name">Drill Machine</span><span class="fp-mach-qty">2</span></div>
+          <div class="fp-mach-item"><span class="fp-mach-name">Front Iron Machine</span><span class="fp-mach-qty">1</span></div>
+          <div class="fp-mach-item"><span class="fp-mach-name">Band Knife</span><span class="fp-mach-qty">1</span></div>
+          <div class="fp-mach-item"><span class="fp-mach-name">Hand Knife</span><span class="fp-mach-qty">1</span></div>
+          <div class="fp-mach-item"><span class="fp-mach-name">Cutting Press Machine</span><span class="fp-mach-qty">1</span></div>
+          <div class="fp-mach-item"><span class="fp-mach-name">Fusing Machine</span><span class="fp-mach-qty">1</span></div>
+          <div class="fp-mach-item"><span class="fp-mach-name">P.P. Banding Machine</span><span class="fp-mach-qty">1</span></div>
+          <div class="fp-mach-item"><span class="fp-mach-name">Air Compressor</span><span class="fp-mach-qty">1</span></div>
+          <div class="fp-mach-item"><span class="fp-mach-name">Diesel Generator</span><span class="fp-mach-qty">125 KVA</span></div>
+          <div class="fp-mach-item" style="grid-column:1/-1;border-right:none;background:#EBF2FB;"><span class="fp-mach-name" style="color:#0C1A2E;font-weight:600;">Embroidery (Tajima)</span><span class="fp-mach-qty" style="color:#1B5FC4;">Japanese CNC</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 3 — 4 PILLARS  (redesigned: dark editorial)
+     ============================================================ -->
+<style>
+#fp-pillars {
+  background: #EBF2FB;
+  padding: 96px 24px;
+  font-family: 'Roboto', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+#fp-pillars::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(27,95,196,.06) 0%, transparent 60%),
+    radial-gradient(circle, rgba(27,95,196,.07) 1px, transparent 1px);
+  background-size: auto, 28px 28px;
+  pointer-events: none;
+}
+#fp-pillars .fp-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+#fp-pillars .fp-section-label {
+  text-align: center;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .32em;
+  text-transform: uppercase;
+  color: #1B5FC4;
+  margin: 0 0 16px;
+  font-family: 'Roboto', sans-serif;
+}
+#fp-pillars .fp-section-title {
+  text-align: center;
+  font-family: 'Prata', Georgia, serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+  font-weight: 400;
+  color: #0B1D3A;
+  margin: 0 0 48px;
+  line-height: 1.25;
+}
+#fp-pillars .fp-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+#fp-pillars .fp-pillar {
+  background: #0B1D3A;
+  padding: 36px 28px 32px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #1B3D6F;
+  border-top: 2px solid #2A72D5;
+  border-left: none;
+  box-shadow: 0 4px 20px rgba(11,29,58,.18);
+  transition: box-shadow 220ms ease, transform 220ms ease, background 220ms ease;
+}
+#fp-pillars .fp-pillar:hover {
+  background: #0F2550;
+  box-shadow: 0 8px 32px rgba(11,29,58,.28);
+  transform: translateY(-3px);
+}
+#fp-pillars .fp-pillar-top-bar { display: none; }
+#fp-pillars .fp-pillar-bg-num {
+  position: absolute;
+  bottom: -18px;
+  right: 4px;
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 120px;
+  font-weight: 800;
+  line-height: 1;
+  color: rgba(90,159,227,.04);
+  pointer-events: none;
+  user-select: none;
+}
+#fp-pillars .fp-pillar-num {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: .22em;
+  color: rgba(90,159,227,.55);
+  text-transform: uppercase;
+  display: block;
+  margin: 0 0 20px;
+  font-family: 'Roboto', sans-serif;
+}
+#fp-pillars .fp-pillar-icon {
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgba(90,159,227,.3);
+  background: rgba(90,159,227,.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 22px;
+  border-radius: 2px;
+  box-shadow: 0 0 12px rgba(90,159,227,.1);
+}
+#fp-pillars .fp-pillar-icon svg {
+  width: 20px;
+  height: 20px;
+  stroke: #5A9FE3;
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+#fp-pillars .fp-pillar h3 {
+  font-family: 'Prata', Georgia, serif;
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: #FFFFFF;
+  margin: 0 0 12px;
+  line-height: 1.4;
+}
+#fp-pillars .fp-pillar p {
+  font-size: 13.5px;
+  color: rgba(255,255,255,.62);
+  line-height: 1.75;
+  margin: 0 0 24px;
+  font-family: 'Roboto', sans-serif;
+}
+#fp-pillars .fp-pillar-stat {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(90,159,227,.15);
+}
+#fp-pillars .fp-pillar-stat-val {
+  font-size: 14px;
+  font-weight: 700;
+  color: #5A9FE3;
+  letter-spacing: .01em;
+  font-variant-numeric: tabular-nums;
+  font-family: 'Roboto', sans-serif;
+}
+#fp-pillars .fp-pillar-stat-desc {
+  font-size: 12px;
+  color: rgba(255,255,255,.42);
+  font-weight: 400;
+  font-family: 'Roboto', sans-serif;
+}
+@media (max-width: 900px) {
+  #fp-pillars .fp-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 540px) {
+  #fp-pillars .fp-grid { grid-template-columns: 1fr; gap: 14px; }
+  #fp-pillars { padding: 72px 20px; }
+  #fp-pillars .fp-section-title { margin-bottom: 36px; }
+}
+</style>
+
+<section id="fp-pillars" aria-label="Why buyers choose Dhaka Hats &amp; Caps">
+  <div class="fp-inner">
+    <p class="fp-section-label">Manufacturing Capabilities</p>
+    <h2 class="fp-section-title">Built for Serious Buyers</h2>
+    <div class="fp-grid">
+
+      <div class="fp-pillar">
+        <div class="fp-pillar-top-bar"></div>
+        <span class="fp-pillar-bg-num">01</span>
+        <span class="fp-pillar-num">01 &mdash; Workforce</span>
+        <div class="fp-pillar-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3>Skilled Workforce</h3>
+        <p>164 trained workers — QC staff, supervisors, and experienced operators producing consistent, export-quality headwear.</p>
+        <div class="fp-pillar-stat">
+          <span class="fp-pillar-stat-val">Est. 1998</span>
+          <span class="fp-pillar-stat-desc">over 28 years of expertise</span>
+        </div>
+      </div>
+
+      <div class="fp-pillar">
+        <div class="fp-pillar-top-bar"></div>
+        <span class="fp-pillar-bg-num">02</span>
+        <span class="fp-pillar-num">02 &mdash; Logistics</span>
+        <div class="fp-pillar-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        </div>
+        <h3>On-Time Delivery</h3>
+        <p>Standard production lead time of 30–45 days from order confirmation. Buffer capacity absorbs demand without affecting existing schedules.</p>
+        <div class="fp-pillar-stat">
+          <span class="fp-pillar-stat-val">FOB · CFR</span>
+          <span class="fp-pillar-stat-desc">flexible shipping terms</span>
+        </div>
+      </div>
+
+      <div class="fp-pillar">
+        <div class="fp-pillar-top-bar"></div>
+        <span class="fp-pillar-bg-num">03</span>
+        <span class="fp-pillar-num">03 &mdash; Quality</span>
+        <div class="fp-pillar-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Risk Protection</h3>
+        <p>Inline QC at cutting, sewing, and finishing stages. Buyers receive production updates and may arrange third-party inspection before shipment.</p>
+        <div class="fp-pillar-stat">
+          <span class="fp-pillar-stat-val">3rd-Party Welcome</span>
+          <span class="fp-pillar-stat-desc">inspection before shipment</span>
+        </div>
+      </div>
+
+      <div class="fp-pillar">
+        <div class="fp-pillar-top-bar"></div>
+        <span class="fp-pillar-bg-num">04</span>
+        <span class="fp-pillar-num">04 &mdash; Access</span>
+        <div class="fp-pillar-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </div>
+        <h3>Full Transparency</h3>
+        <p>Real-time production updates, open factory visits, and no hidden charges. What you approve in samples is what ships at scale — no surprises.</p>
+        <div class="fp-pillar-stat">
+          <span class="fp-pillar-stat-val">No Hidden Charges</span>
+          <span class="fp-pillar-stat-desc">what you approve is what ships</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- (old Elementor sections replaced — do not restore) -->
+<div style="display:none">
 				<section class="elementor-section elementor-top-section elementor-element elementor-element-1a9919f elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="1a9919f" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
 						<div class="elementor-container elementor-column-gap-default">
 					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-2001fdc" data-id="2001fdc" data-element_type="column">
@@ -539,7 +1618,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')dhcapsCloseD
 				</div>
 				<div class="elementor-element elementor-element-817caf1 elementor-widget elementor-widget-text-editor" data-id="817caf1" data-element_type="widget" data-widget_type="text-editor.default">
 				<div class="elementor-widget-container">
-							<p>Our factory employs 164 skilled workers — including dedicated QC staff, pattern cutters, and experienced operators — trained to produce consistent, export-quality headwear for global buyers.</p>						</div>
+							<p>Our factory employs 100–150 skilled workers — including dedicated QC staff, pattern cutters, and experienced operators — trained to produce consistent, export-quality headwear for global buyers.</p>						</div>
 				</div>
 					</div>
 		</div>
@@ -666,7 +1745,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')dhcapsCloseD
 							<tr>
 								<td>9</td>
 								<td>Factory Details</td>
-								<td>Employees: <br>  Male-15<br>Female-149<br>Total-164</td>
+								<td>Employees: 100–150 skilled workers</td>
 							</tr>		
 							<tr>
 								<td>10</td>
@@ -964,26 +2043,253 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')dhcapsCloseD
 		</section>
 				
 				</div>
+</div><!-- /.hidden old elementor sections -->
 
-<div style="background:#1a1a2e;padding:60px 20px;text-align:center;">
-  <h2 style="color:#ffffff;font-size:28px;font-weight:700;margin:0 0 12px 0;font-family:inherit;">Ready to Start Your Order?</h2>
-  <p style="color:#cccccc;font-size:16px;margin:0 0 8px 0;">MOQ: from 144 pcs &nbsp;|&nbsp; Lead Time: 30–45 days &nbsp;|&nbsp; Capacity: 10,000 pcs/day</p>
-  <p style="color:#cccccc;font-size:15px;margin:0 0 28px 0;">We reply within 24 hours.</p>
-  <a href="https://contact.dhcaps.com/" style="display:inline-block;background:#e8b84b;color:#1a1a2e;font-size:17px;font-weight:700;padding:16px 40px;border-radius:4px;text-decoration:none;margin:0 10px 10px 10px;">Get a Quote</a>
-  <a href="https://wa.me/+8801711525227" style="display:inline-block;background:#25D366;color:#ffffff;font-size:17px;font-weight:700;padding:16px 40px;border-radius:4px;text-decoration:none;margin:0 10px 10px 10px;">WhatsApp Us</a>
-</div>
+<style>
+/* ── Closing CTA section ── */
+#fp-cta {
+  background: #0B1D3A;
+  position: relative;
+  overflow: hidden;
+  padding: 80px 20px 72px;
+}
+#fp-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(90,159,227,.08) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+}
+#fp-cta::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(27,95,196,.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+#fp-cta .fp-cta-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
+}
+#fp-cta .fp-cta-eyebrow {
+  display: inline-block;
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(90,159,227,.85);
+  border: 1px solid rgba(90,159,227,.28);
+  border-radius: 2px;
+  padding: 4px 14px;
+  margin-bottom: 22px;
+}
+#fp-cta h2 {
+  font-family: 'Prata', Georgia, serif;
+  font-size: clamp(1.75rem, 4vw, 2.6rem);
+  font-weight: 400;
+  color: #FFFFFF;
+  margin: 0 0 14px;
+  line-height: 1.2;
+}
+#fp-cta .fp-cta-sub {
+  font-size: 1rem;
+  color: rgba(255,255,255,.65);
+  margin: 0 0 10px;
+  line-height: 1.6;
+}
+#fp-cta .fp-cta-specs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 24px;
+  margin: 20px 0 36px;
+}
+#fp-cta .fp-cta-spec {
+  font-size: .85rem;
+  color: rgba(255,255,255,.72);
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+#fp-cta .fp-cta-spec::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #5A9FE3;
+  flex-shrink: 0;
+}
+#fp-cta .fp-cta-btns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 52px;
+}
+#fp-cta .fp-btn-primary {
+  display: inline-block;
+  background: #1B5FC4;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 15px 38px;
+  border-radius: 3px;
+  text-decoration: none;
+  letter-spacing: .02em;
+  transition: background .18s, transform .15s, box-shadow .18s;
+  box-shadow: 0 4px 18px rgba(27,95,196,.38);
+}
+#fp-cta .fp-btn-primary:hover {
+  background: #2A72D5;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(27,95,196,.48);
+}
+#fp-cta .fp-btn-wa {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,.28);
+  color: rgba(255,255,255,.85);
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 15px 32px;
+  border-radius: 3px;
+  text-decoration: none;
+  transition: border-color .18s, color .18s, background .18s;
+}
+#fp-cta .fp-btn-wa:hover {
+  border-color: #25D366;
+  color: #25D366;
+  background: rgba(37,211,102,.06);
+}
+/* ── Products strip ── */
+#fp-cta .fp-products-strip {
+  border-top: 1px solid rgba(90,159,227,.18);
+  padding-top: 36px;
+}
+#fp-cta .fp-products-label {
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.4);
+  margin-bottom: 10px;
+}
+#fp-cta .fp-products-intro {
+  font-size: .88rem;
+  color: rgba(255,255,255,.5);
+  margin: 0 auto 20px;
+  max-width: 560px;
+  line-height: 1.55;
+}
+#fp-cta .fp-prod-chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+#fp-cta .fp-prod-chip {
+  display: inline-block;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(90,159,227,.22);
+  color: rgba(255,255,255,.72);
+  font-size: .82rem;
+  font-weight: 500;
+  padding: 7px 16px;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: background .15s, border-color .15s, color .15s;
+}
+#fp-cta .fp-prod-chip:hover {
+  background: rgba(90,159,227,.12);
+  border-color: rgba(90,159,227,.5);
+  color: #ffffff;
+}
+#fp-cta .fp-prod-chip--more {
+  background: rgba(27,95,196,.18);
+  border-color: rgba(90,159,227,.45);
+  color: #5A9FE3;
+  font-weight: 600;
+}
+#fp-cta .fp-prod-chip--more:hover {
+  background: rgba(27,95,196,.32);
+  border-color: #5A9FE3;
+  color: #ffffff;
+}
+#fp-cta .fp-catalog-link {
+  font-size: .85rem;
+  color: rgba(90,159,227,.8);
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: .02em;
+  transition: color .15s;
+}
+#fp-cta .fp-catalog-link:hover { color: #5A9FE3; }
+@media (max-width:600px) {
+  #fp-cta { padding: 60px 16px 56px; }
+  #fp-cta h2 { font-size: 1.65rem; }
+  #fp-cta .fp-btn-primary,
+  #fp-cta .fp-btn-wa { width: 100%; justify-content: center; }
+}
+</style>
 
+<section id="fp-cta">
+  <div class="fp-cta-inner">
+    <span class="fp-cta-eyebrow">Source Direct from Factory</span>
+    <h2>Ready to Source Custom Headwear?</h2>
+    <p class="fp-cta-sub">Our team responds within 24 hours. Samples available before bulk order.</p>
+    <div class="fp-cta-specs">
+      <span class="fp-cta-spec">MOQ from 144 pcs</span>
+      <span class="fp-cta-spec">Lead time 30–45 days</span>
+      <span class="fp-cta-spec">Capacity 10,000 pcs/day</span>
+      <span class="fp-cta-spec">FOB &amp; CFR available</span>
+      <span class="fp-cta-spec">3rd-party inspection welcome</span>
+    </div>
+    <div class="fp-cta-btns">
+      <a href="https://contact.dhcaps.com/" class="fp-btn-primary">Request a Quote</a>
+      <a href="https://wa.me/+8801711525227" class="fp-btn-wa">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp Us
+      </a>
+    </div>
 
-<!-- DHCAPS Internal — Products We Make -->
-<div id="dhcaps-products-grid" style="background:#f4f4f4;padding:48px 20px;text-align:center;">
-  <p style="color:#888;font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 10px;">Factory Direct</p>
-  <h3 style="font-size:clamp(1.2rem,2.5vw,1.6rem);font-weight:700;margin:0 0 14px;color:#1a1a2e;">Products We Manufacture</h3>
-  <p style="color:#666;font-size:.9rem;margin:0 0 24px;">Browse our full range of custom headwear — all made in our Dhaka factory.</p>
-  <div style="max-width:800px;margin:0 auto;">
-  <a href="/products/snapback-hats/" style="display:inline-block;background:#ffffff;border:1px solid #ddd;color:#2b2b2b;font-size:.9rem;font-weight:600;padding:10px 18px;border-radius:3px;text-decoration:none;margin:5px;">Snapback Hats</a><a href="/products/trucker-mesh/" style="display:inline-block;background:#ffffff;border:1px solid #ddd;color:#2b2b2b;font-size:.9rem;font-weight:600;padding:10px 18px;border-radius:3px;text-decoration:none;margin:5px;">Trucker Hats</a><a href="/products/cotton-sports-cap/" style="display:inline-block;background:#ffffff;border:1px solid #ddd;color:#2b2b2b;font-size:.9rem;font-weight:600;padding:10px 18px;border-radius:3px;text-decoration:none;margin:5px;">Cotton Sports Cap</a><a href="/products/beanie/" style="display:inline-block;background:#ffffff;border:1px solid #ddd;color:#2b2b2b;font-size:.9rem;font-weight:600;padding:10px 18px;border-radius:3px;text-decoration:none;margin:5px;">Beanies</a><a href="/products/bucket-hats/" style="display:inline-block;background:#ffffff;border:1px solid #ddd;color:#2b2b2b;font-size:.9rem;font-weight:600;padding:10px 18px;border-radius:3px;text-decoration:none;margin:5px;">Bucket Hats</a><a href="/products/dad-hat/" style="display:inline-block;background:#ffffff;border:1px solid #ddd;color:#2b2b2b;font-size:.9rem;font-weight:600;padding:10px 18px;border-radius:3px;text-decoration:none;margin:5px;">Dad Hats</a><a href="/products/critical-embroidery-caps/" style="display:inline-block;background:#ffffff;border:1px solid #ddd;color:#2b2b2b;font-size:.9rem;font-weight:600;padding:10px 18px;border-radius:3px;text-decoration:none;margin:5px;">Critical Embroidery Caps</a><a href="/products/sublimation-print/" style="display:inline-block;background:#ffffff;border:1px solid #ddd;color:#2b2b2b;font-size:.9rem;font-weight:600;padding:10px 18px;border-radius:3px;text-decoration:none;margin:5px;">Sublimation Print</a><a href="/products/promotional-caps/" style="display:inline-block;background:#ffffff;border:1px solid #ddd;color:#2b2b2b;font-size:.9rem;font-weight:600;padding:10px 18px;border-radius:3px;text-decoration:none;margin:5px;">Promotional Caps</a><a href="/products/leather-snapback/" style="display:inline-block;background:#ffffff;border:1px solid #ddd;color:#2b2b2b;font-size:.9rem;font-weight:600;padding:10px 18px;border-radius:3px;text-decoration:none;margin:5px;">Leather Snapback</a><a href="/products/metal-plate-snapback/" style="display:inline-block;background:#ffffff;border:1px solid #ddd;color:#2b2b2b;font-size:.9rem;font-weight:600;padding:10px 18px;border-radius:3px;text-decoration:none;margin:5px;">Metal Plate Snapback</a><a href="/products/unisex-performance-cap/" style="display:inline-block;background:#ffffff;border:1px solid #ddd;color:#2b2b2b;font-size:.9rem;font-weight:600;padding:10px 18px;border-radius:3px;text-decoration:none;margin:5px;">Performance Caps</a>
+    <div class="fp-products-strip">
+      <p class="fp-products-label">What We Manufacture</p>
+      <p class="fp-products-intro">From structured 6-panel caps to performance headwear — all made in-house in Dhaka. Don't see your exact style? We very likely make it.</p>
+      <div class="fp-prod-chips">
+        <a href="/products/snapback-hats/" class="fp-prod-chip">Snapback Hats</a>
+        <a href="/products/trucker-mesh/" class="fp-prod-chip">Trucker Hats</a>
+        <a href="/products/cotton-sports-cap/" class="fp-prod-chip">Cotton Sports Caps</a>
+        <a href="/products/beanie/" class="fp-prod-chip">Beanies &amp; Knit Hats</a>
+        <a href="/products/bucket-hats/" class="fp-prod-chip">Bucket Hats</a>
+        <a href="/products/dad-hat/" class="fp-prod-chip">Dad Hats</a>
+        <a href="/products/critical-embroidery-caps/" class="fp-prod-chip">Embroidery Caps</a>
+        <a href="/products/sublimation-print/" class="fp-prod-chip">Sublimation Print Caps</a>
+        <a href="/products/promotional-caps/" class="fp-prod-chip">Promotional Caps</a>
+        <a href="/products/leather-snapback/" class="fp-prod-chip">Leather Snapback</a>
+        <a href="/products/metal-plate-snapback/" class="fp-prod-chip">Metal Plate Snapback</a>
+        <a href="/products/unisex-performance-cap/" class="fp-prod-chip">Performance Caps</a>
+        <a href="/products/" class="fp-prod-chip">5-Panel Caps</a>
+        <a href="/products/" class="fp-prod-chip">Fitted Caps</a>
+        <a href="/products/" class="fp-prod-chip">Flexfit Caps</a>
+        <a href="/products/" class="fp-prod-chip">Flat Caps</a>
+        <a href="/products/" class="fp-prod-chip">Visors</a>
+        <a href="/products/" class="fp-prod-chip">Winter Hats</a>
+        <a href="/products/" class="fp-prod-chip">Military Caps</a>
+        <a href="/products/" class="fp-prod-chip">Cycling Caps</a>
+        <a href="https://contact.dhcaps.com/" class="fp-prod-chip fp-prod-chip--more">+ Your Style &rarr;</a>
+      </div>
+      <a href="/products/" class="fp-catalog-link">View full product catalog &rarr;</a>
+    </div>
   </div>
-  <p style="margin:24px 0 0;"><a href="/products/" style="color:#0774c2;font-size:.9rem;font-weight:600;text-decoration:underline;">View full product catalog &#8594;</a></p>
-</div>
+</section>
 </main><!--/.neve-main-->
 
 <button tabindex="0" id="scroll-to-top" class="scroll-to-top scroll-to-top-right  scroll-show-mobile icon" aria-label="Scroll to Top"><svg class="scroll-to-top-icon" aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewbox="0 0 15 15"><rect width="15" height="15" fill="none"></rect><path fill="currentColor" d="M2,8.48l-.65-.65a.71.71,0,0,1,0-1L7,1.14a.72.72,0,0,1,1,0l5.69,5.7a.71.71,0,0,1,0,1L13,8.48a.71.71,0,0,1-1,0L8.67,4.94v8.42a.7.7,0,0,1-.7.7H7a.7.7,0,0,1-.7-.7V4.94L3,8.47a.7.7,0,0,1-1,0Z"></path></svg></button>		<footer itemtype="https://schema.org/WPFooter" itemscope="itemscope" id="colophon" role="contentinfo">

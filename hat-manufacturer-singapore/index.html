@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" prefix="og: https://ogp.me/ns#">
 
 <head> <script type="text/javascript">if(!gform){document.addEventListener("gform_main_scripts_loaded",function(){gform.scriptsLoaded=!0}),window.addEventListener("DOMContentLoaded",function(){gform.domLoaded=!0});var gform={domLoaded:!1,scriptsLoaded:!1,initializeOnLoaded:function(o){gform.domLoaded&&gform.scriptsLoaded?o():!gform.domLoaded&&gform.scriptsLoaded?window.addEventListener("DOMContentLoaded",o):document.addEventListener("gform_main_scripts_loaded",o)},hooks:{action:{},filter:{}},addAction:function(o,n,r,t){gform.addHook("action",o,n,r,t)},addFilter:function(o,n,r,t){gform.addHook("filter",o,n,r,t)},doAction:function(o){gform.doHook("action",o,arguments)},applyFilters:function(o){return gform.doHook("filter",o,arguments)},removeAction:function(o,n){gform.removeHook("action",o,n)},removeFilter:function(o,n,r){gform.removeHook("filter",o,n,r)},addHook:function(o,n,r,t,i){null==gform.hooks[o][n]&&(gform.hooks[o][n]=[]);var e=gform.hooks[o][n];null==i&&(i=n+"_"+e.length),null==t&&(t=10),gform.hooks[o][n].push({tag:i,callable:r,priority:t})},doHook:function(o,n,r){if(r=Array.prototype.slice.call(r,1),null!=gform.hooks[o][n]){var t,i=gform.hooks[o][n];i.sort(function(o,n){return o.priority-n.priority});for(var e=0;e<i.length;e++)"function"!=typeof(t=i[e].callable)&&(t=window[t]),"action"==o?t.apply(null,r):r[0]=t.apply(null,r)}if("filter"==o)return r[0]},removeHook:function(o,n,r,t){if(null!=gform.hooks[o][n])for(var i=gform.hooks[o][n],e=i.length-1;0<=e;e--)null!=t&&t!=i[e].tag||null!=r&&r!=i[e].priority||i.splice(e,1)}}}</script>
@@ -185,7 +185,7 @@ gtag("config", "G-PQGW4M714C");</script>
 
 /* ── Hero ── */
 .sg-hero {
-  background: #0d0f14;
+  background: linear-gradient(135deg, #0A1628 0%, #0D2044 40%, #0B1D3A 60%, #071526 100%);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -197,11 +197,24 @@ gtag("config", "G-PQGW4M714C");</script>
 .sg-hero::before {
   content: '';
   position: absolute;
-  top: -200px; right: -200px;
-  width: 600px; height: 600px;
-  background: radial-gradient(circle, rgba(232,184,75,0.12) 0%, transparent 70%);
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 55% at 20% 0%, rgba(42,114,213,.28) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 40% at 80% 5%, rgba(90,159,227,.14) 0%, transparent 50%),
+    radial-gradient(ellipse 100% 50% at 50% 110%, rgba(5,10,20,.85) 0%, transparent 65%);
   pointer-events: none;
   z-index: 0;
+}
+.sg-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(-45deg, transparent, transparent 34px, rgba(90,159,227,.03) 34px, rgba(90,159,227,.03) 35px),
+    radial-gradient(circle, rgba(90,159,227,.1) 1px, transparent 1px);
+  background-size: auto, 28px 28px;
+  pointer-events: none;
+  z-index: 1;
 }
 .sg-hero-inner {
   display: grid;
@@ -216,10 +229,10 @@ gtag("config", "G-PQGW4M714C");</script>
   font-size: 11px;
   letter-spacing: .18em;
   text-transform: uppercase;
-  color: #e8b84b;
+  color: #2A72D5;
   margin-bottom: 24px;
 }
-.sg-hero-eyebrow span { display: inline-block; width: 28px; height: 1px; background: #e8b84b; }
+.sg-hero-eyebrow span { display: inline-block; width: 28px; height: 1px; background: #5A9FE3; }
 .sg-h1 {
   font-family: 'Prata', Georgia, serif;
   font-size: clamp(2.4rem, 5vw, 4rem);
@@ -229,7 +242,7 @@ gtag("config", "G-PQGW4M714C");</script>
   margin: 0 0 24px;
   letter-spacing: -.01em;
 }
-.sg-h1 em { color: #e8b84b; font-style: normal; }
+.sg-h1 em { color: #2A72D5; font-style: normal; }
 .sg-hero-sub {
   font-size: 1rem;
   color: #9a9a9a;
@@ -256,8 +269,8 @@ gtag("config", "G-PQGW4M714C");</script>
 .sg-cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
 .sg-btn-primary {
   display: inline-block;
-  background: #e8b84b;
-  color: #0d0f14;
+  background: #2A72D5;
+  color: #ffffff;
   font-size: .9rem;
   font-weight: 700;
   padding: 14px 28px;
@@ -265,7 +278,7 @@ gtag("config", "G-PQGW4M714C");</script>
   letter-spacing: .03em;
   transition: background .2s;
 }
-.sg-btn-primary:hover { background: #f5ca6a; }
+.sg-btn-primary:hover { background: #5A9FE3; color: #ffffff !important; }
 .sg-btn-wa {
   display: inline-flex;
   align-items: center;
@@ -279,7 +292,7 @@ gtag("config", "G-PQGW4M714C");</script>
   border-radius: 3px;
   transition: background .2s;
 }
-.sg-btn-wa:hover { background: rgba(255,255,255,.1); }
+.sg-btn-wa:hover { background: rgba(255,255,255,.1); color: #ffffff !important; }
 .sg-hero-img {
   display: flex;
   align-items: center;
@@ -299,7 +312,7 @@ gtag("config", "G-PQGW4M714C");</script>
 
 /* ── Marquee ── */
 .sg-marquee-wrap {
-  background: #e8b84b;
+  background: #2A72D5;
   padding: 14px 0;
   overflow: hidden;
   white-space: nowrap;
@@ -313,7 +326,7 @@ gtag("config", "G-PQGW4M714C");</script>
   font-weight: 700;
   letter-spacing: .14em;
   text-transform: uppercase;
-  color: #0d0f14;
+  color: #ffffff;
   padding: 0 28px;
 }
 .sg-marquee-track span::before { content: '·'; margin-right: 28px; }
@@ -321,13 +334,13 @@ gtag("config", "G-PQGW4M714C");</script>
 
 /* ── Sections ── */
 .sg-section { padding: 88px 0; }
-.sg-section-dark { background: #0d0f14; }
+.sg-section-dark { background: #0B1D3A; }
 .sg-section-grey { background: #f5f5f3; }
 .sg-eyebrow {
   font-size: 11px;
   letter-spacing: .16em;
   text-transform: uppercase;
-  color: #e8b84b;
+  color: #2A72D5;
   margin-bottom: 12px;
   display: block;
 }
@@ -354,7 +367,7 @@ gtag("config", "G-PQGW4M714C");</script>
 .sg-why-num {
   font-family: 'Prata', Georgia, serif;
   font-size: 3rem;
-  color: rgba(232,184,75,0.22);
+  color: rgba(42,114,213,0.22);
   line-height: 1;
   margin-bottom: 16px;
 }
@@ -387,22 +400,51 @@ gtag("config", "G-PQGW4M714C");</script>
 .sg-product-desc { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: .75rem; color: #666; line-height: 1.5; margin: 0; letter-spacing: 0; }
 
 /* ── Process ── */
+.sg-section-dark {
+  position: relative;
+  overflow: hidden;
+}
+.sg-section-dark::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 65% 60% at 10% 50%, rgba(42,114,213,.22) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 50% at 90% 20%, rgba(90,159,227,.12) 0%, transparent 50%),
+    radial-gradient(ellipse 80% 40% at 50% 110%, rgba(5,10,20,.7) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+.sg-section-dark::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(-45deg, transparent, transparent 34px, rgba(90,159,227,.025) 34px, rgba(90,159,227,.025) 35px),
+    radial-gradient(circle, rgba(90,159,227,.08) 1px, transparent 1px);
+  background-size: auto, 28px 28px;
+  pointer-events: none;
+  z-index: 0;
+}
+.sg-section-dark .sg-outer,
+.sg-section-dark .sg-process-grid { position: relative; z-index: 1; }
 .sg-process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
-.sg-process-step { padding: 40px 32px; border-right: 1px solid rgba(255,255,255,.07); }
+.sg-process-step { padding: 40px 32px; border-right: 1px solid rgba(90,159,227,.12); }
 .sg-process-step:last-child { border-right: none; }
 .sg-process-num {
   font-family: 'Prata', Georgia, serif;
   font-size: 3.5rem;
-  color: rgba(232,184,75,.2);
+  color: rgba(90,159,227,.25);
   line-height: 1;
   margin-bottom: 20px;
 }
 .sg-process-title { font-size: 1rem; font-weight: 700; color: #ffffff; margin-bottom: 10px; }
-.sg-process-body { font-size: .85rem; color: #777; line-height: 1.7; margin: 0; }
+.sg-process-body { font-size: .85rem; color: rgba(255,255,255,.62); line-height: 1.7; margin: 0; }
 .sg-process-tag {
   display: inline-block;
-  background: rgba(232,184,75,.12);
-  color: #e8b84b;
+  background: rgba(90,159,227,.15);
+  border: 1px solid rgba(90,159,227,.35);
+  color: #5A9FE3;
   font-size: .7rem;
   font-weight: 700;
   letter-spacing: .1em;
@@ -421,32 +463,71 @@ gtag("config", "G-PQGW4M714C");</script>
 .sg-spec-table td:first-child { color: #555; width: 44%; padding-right: 16px; font-size: .85rem; text-transform: uppercase; letter-spacing: .06em; }
 .sg-spec-table td:last-child { color: #1a1a1a; font-weight: 500; }
 .sg-terms-visual {
-  background: #0d0f14;
+  background: linear-gradient(145deg, #0D2044 0%, #0B1D3A 60%, #071526 100%);
+  border: 1px solid rgba(90,159,227,.18);
   border-radius: 8px;
   padding: 40px 36px;
   position: relative;
   overflow: hidden;
+}
+.sg-terms-visual::before {
+  content: '';
+  position: absolute;
+  top: -80px; left: -80px;
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(42,114,213,.22) 0%, transparent 65%);
+  pointer-events: none;
 }
 .sg-terms-visual::after {
   content: '';
   position: absolute;
   bottom: -60px; right: -60px;
   width: 240px; height: 240px;
-  background: radial-gradient(circle, rgba(232,184,75,.15) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(90,159,227,.15) 0%, transparent 65%);
   pointer-events: none;
 }
-.sg-terms-visual-label { font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; color: #e8b84b; margin-bottom: 24px; }
-.sg-terms-visual-item { padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,.06); }
+.sg-terms-visual-label { font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; color: rgba(90,159,227,.85); margin-bottom: 24px; position: relative; z-index: 1; }
+.sg-terms-visual-item { padding: 16px 0; border-bottom: 1px solid rgba(90,159,227,.1); position: relative; z-index: 1; }
 .sg-terms-visual-item:last-child { border-bottom: none; }
-.sg-terms-visual-item-label { font-size: .75rem; color: #555; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 4px; }
+.sg-terms-visual-item-label { font-size: .75rem; color: rgba(255,255,255,.45); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 4px; }
 .sg-terms-visual-item-val { font-size: 1.1rem; font-weight: 700; color: #ffffff; }
 
 /* ── FAQ ── */
+.sg-section-faq {
+  background: linear-gradient(135deg, #0A1628 0%, #0D2044 50%, #0B1D3A 100%);
+  position: relative;
+  overflow: hidden;
+}
+.sg-section-faq::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 70% at 95% 50%, rgba(42,114,213,.18) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 40% at 5% 20%, rgba(90,159,227,.1) 0%, transparent 50%),
+    radial-gradient(circle, rgba(90,159,227,.06) 1px, transparent 1px);
+  background-size: auto, auto, 28px 28px;
+  pointer-events: none;
+}
+.sg-section-faq .sg-outer { position: relative; z-index: 1; }
+.sg-section-faq .sg-eyebrow { color: rgba(90,159,227,.8); }
+.sg-section-faq .sg-h2 { color: #ffffff; }
+.sg-section-faq .sg-section-sub { color: rgba(255,255,255,.55); }
 .sg-faq { max-width: 740px; }
-.sg-faq details { border-bottom: 1px solid #efefef; }
-.sg-faq details:first-child { border-top: 1px solid #efefef; }
+.sg-faq details {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(90,159,227,.14);
+  border-radius: 4px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  transition: background .2s;
+}
+.sg-faq details[open] {
+  background: rgba(90,159,227,.07);
+  border-color: rgba(90,159,227,.3);
+}
 .sg-faq summary {
-  padding: 20px 0;
+  padding: 20px 24px;
   font-weight: 600;
   font-size: .95rem;
   cursor: pointer;
@@ -454,23 +535,25 @@ gtag("config", "G-PQGW4M714C");</script>
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #1a1a1a;
+  color: #ffffff;
 }
 .sg-faq summary::-webkit-details-marker { display: none; }
 .sg-faq summary::after {
   content: '+';
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 300;
-  color: #ccc;
+  color: rgba(90,159,227,.7);
   flex-shrink: 0;
   margin-left: 16px;
+  width: 24px;
+  text-align: center;
 }
-.sg-faq details[open] summary::after { content: '–'; }
-.sg-faq details p { padding: 0 0 20px; margin: 0; color: #444; font-size: .9rem; line-height: 1.7; }
+.sg-faq details[open] summary::after { content: '–'; color: #5A9FE3; }
+.sg-faq details p { padding: 0 24px 20px; margin: 0; color: rgba(255,255,255,.62); font-size: .9rem; line-height: 1.75; border-top: 1px solid rgba(90,159,227,.1); padding-top: 16px; }
 
 /* ── CTA ── */
 .sg-cta {
-  background: #0d0f14;
+  background: linear-gradient(135deg, #0A1628 0%, #0D2044 40%, #0B1D3A 65%, #071526 100%);
   padding: 100px 24px;
   text-align: center;
   position: relative;
@@ -479,12 +562,28 @@ gtag("config", "G-PQGW4M714C");</script>
 .sg-cta::before {
   content: '';
   position: absolute;
-  top: 50%; left: 50%; transform: translate(-50%, -50%);
-  width: 800px; height: 400px;
-  background: radial-gradient(ellipse, rgba(232,184,75,.08) 0%, transparent 70%);
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 60% at 50% 0%, rgba(42,114,213,.3) 0%, transparent 55%),
+    radial-gradient(ellipse 40% 35% at 15% 80%, rgba(90,159,227,.12) 0%, transparent 50%),
+    radial-gradient(ellipse 40% 35% at 85% 80%, rgba(27,95,196,.12) 0%, transparent 50%),
+    radial-gradient(ellipse 100% 40% at 50% 120%, rgba(5,10,20,.8) 0%, transparent 60%);
   pointer-events: none;
+  z-index: 0;
 }
-.sg-cta-label { font-size: .75rem; letter-spacing: .18em; text-transform: uppercase; color: #e8b84b; margin-bottom: 20px; display: block; }
+.sg-cta::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(-45deg, transparent, transparent 34px, rgba(90,159,227,.03) 34px, rgba(90,159,227,.03) 35px),
+    radial-gradient(circle, rgba(90,159,227,.09) 1px, transparent 1px);
+  background-size: auto, 28px 28px;
+  pointer-events: none;
+  z-index: 0;
+}
+.sg-cta > * { position: relative; z-index: 1; }
+.sg-cta-label { font-size: .75rem; letter-spacing: .18em; text-transform: uppercase; color: #2A72D5; margin-bottom: 20px; display: block; }
 .sg-cta-h2 {
   font-family: 'Prata', Georgia, serif;
   font-size: clamp(1.8rem, 4vw, 3rem);
@@ -536,10 +635,10 @@ gtag("config", "G-PQGW4M714C");</script>
 .dhcaps-utility-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;gap:12px;}
 .dhcaps-utility-left{display:flex;align-items:center;gap:6px;flex-wrap:wrap;font-family:"Roboto Mono","Courier New",monospace;font-size:.76rem;letter-spacing:.02em;}
 .dhcaps-utility-left a{color:#ccc;text-decoration:none;font-weight:500;transition:color .2s;}
-.dhcaps-utility-left a:hover{color:#e8b84b;}
+.dhcaps-utility-left a:hover{color:#2A72D5;}
 .dhcaps-sep{color:#555;padding:0 2px;}
-.dhcaps-quote-btn{background:#e8b84b;color:#111!important;font-weight:700;font-size:.78rem;padding:6px 18px;border-radius:2px;text-decoration:none!important;letter-spacing:.06em;text-transform:uppercase;transition:background .2s;}
-.dhcaps-quote-btn:hover{background:#f5ca6a!important;}
+.dhcaps-quote-btn{background:#2A72D5;color:#fff!important;font-weight:700;font-size:.78rem;padding:6px 18px;border-radius:2px;text-decoration:none!important;letter-spacing:.06em;text-transform:uppercase;transition:background .2s;}
+.dhcaps-quote-btn:hover{background:#5A9FE3!important;}
 
 /* Logo row */
 #dhcaps-logo-row{background:#fff;padding:18px 24px;display:flex;justify-content:center;align-items:center;border-bottom:1px solid #f0f0f0;}
@@ -559,7 +658,7 @@ gtag("config", "G-PQGW4M714C");</script>
 .dhcaps-nav-menu > li.has-submenu > a::after{content:'▾';margin-left:4px;font-size:.65rem;}
 
 /* Dropdown */
-.dhcaps-submenu{position:absolute;top:100%;left:0;background:#fff;border:1px solid #eaeaea;border-top:2px solid #e8b84b;box-shadow:0 8px 24px rgba(0,0,0,.1);min-width:220px;list-style:none;margin:0;padding:8px 0;z-index:2000;display:none;}
+.dhcaps-submenu{position:absolute;top:100%;left:0;background:#fff;border:1px solid #eaeaea;border-top:2px solid #2A72D5;box-shadow:0 8px 24px rgba(0,0,0,.1);min-width:220px;list-style:none;margin:0;padding:8px 0;z-index:2000;display:none;}
 .dhcaps-nav-menu > li.has-submenu:hover .dhcaps-submenu{display:block;}
 .dhcaps-submenu .submenu-parent{font-size:.72rem;font-weight:700;color:#888;letter-spacing:.1em;text-transform:uppercase;padding:10px 20px 4px;}
 .dhcaps-submenu a{display:block;padding:7px 20px;font-size:.82rem;color:#333;text-decoration:none;transition:background .15s,color .15s;}
@@ -794,7 +893,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')dhcapsCloseD
 #dhcaps-sticky .s-menu>li>a{display:block;padding:8px 11px;font-family:"Roboto",Arial,sans-serif;font-size:10.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#2b2b2b;text-decoration:none;white-space:nowrap;}
 #dhcaps-sticky .s-menu>li>a:hover{color:#420000;}
 #dhcaps-sticky .s-menu>li.has-dd>a::after{content:"▾";margin-left:3px;font-size:9px;}
-#dhcaps-sticky .s-dd{position:absolute;top:100%;left:0;background:#fff;border:0.5px solid #eaeaea;border-top:2px solid #e8b84b;box-shadow:0 8px 24px rgba(0,0,0,.1);width:460px;display:none;z-index:9000;padding:12px 0;}
+#dhcaps-sticky .s-dd{position:absolute;top:100%;left:0;background:#fff;border:0.5px solid #eaeaea;border-top:2px solid #2A72D5;box-shadow:0 8px 24px rgba(0,0,0,.1);width:460px;display:none;z-index:9000;padding:12px 0;}
 #dhcaps-sticky .s-dd-grid{display:grid;grid-template-columns:1fr 1fr;}
 #dhcaps-sticky .s-dd-col{padding:0 6px;}
 #dhcaps-sticky .s-dd-col+.s-dd-col{border-left:0.5px solid #f0f0f0;}
@@ -803,8 +902,8 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')dhcapsCloseD
 #dhcaps-sticky .s-dd a:hover{background:#fafafa;color:#420000;}
 #dhcaps-sticky .s-dd-sep{border:none;border-top:0.5px solid #f0f0f0;margin:5px 12px;}
 #dhcaps-sticky .s-menu>li.has-dd:hover .s-dd{display:block;}
-#dhcaps-sticky .s-quote{background:#e8b84b;color:#111;font-weight:700;font-size:10px;padding:7px 16px;border-radius:2px;text-decoration:none;letter-spacing:.07em;text-transform:uppercase;white-space:nowrap;flex-shrink:0;}
-#dhcaps-sticky .s-quote:hover{background:#f5ca6a;}
+#dhcaps-sticky .s-quote{background:#2A72D5;color:#fff;font-weight:700;font-size:10px;padding:7px 16px;border-radius:2px;text-decoration:none;letter-spacing:.07em;text-transform:uppercase;white-space:nowrap;flex-shrink:0;}
+#dhcaps-sticky .s-quote:hover{background:#5A9FE3;}
 @media(max-width:960px){#dhcaps-sticky{display:none;}}
 </style>
 
@@ -898,7 +997,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')dhcapsCloseD
         <p class="sg-hero-sub">
           OEM and private label hats produced at our Uttara, Dhaka factory.
           Shipped direct — sea or air — to Singapore.
-          25+ years manufacturing experience.
+          28+ years manufacturing experience.
         </p>
 
         <div class="sg-stats">
@@ -911,7 +1010,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')dhcapsCloseD
             <span class="sg-stat-label">Day lead time</span>
           </div>
           <div>
-            <span class="sg-stat-num">25+</span>
+            <span class="sg-stat-num">28+</span>
             <span class="sg-stat-label">Years experience</span>
           </div>
         </div>
@@ -986,7 +1085,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')dhcapsCloseD
       
       <a href="/products/snapback-hats/" class="sg-product-card">
         <div class="sg-product-img" style="background:#f5f5f3;">
-          <img src="https://www.dhcaps.com/wp-content/uploads/2024/05/Website-hat-photo-10-1024x1024.webp" alt="Snapback Hats manufacturer Bangladesh" loading="lazy">
+          <img src="/wp-content/uploads/hat-covers/Snapback hats.webp" alt="Snapback Hats manufacturer Bangladesh" loading="lazy">
         </div>
         <div class="sg-product-info">
           <p class="sg-product-name">Snapback Hats</p>
@@ -995,7 +1094,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')dhcapsCloseD
       </a>
       <a href="/products/trucker-mesh/" class="sg-product-card">
         <div class="sg-product-img" style="background:#f5f5f3;">
-          <img src="https://www.dhcaps.com/wp-content/uploads/2024/05/Hat-Category-Photo-3-1024x1024.webp" alt="Classic Trucker Mesh manufacturer Bangladesh" loading="lazy">
+          <img src="/wp-content/uploads/hat-covers/Classic Trucker Mesh.webp" alt="Classic Trucker Mesh manufacturer Bangladesh" loading="lazy">
         </div>
         <div class="sg-product-info">
           <p class="sg-product-name">Classic Trucker Mesh</p>
@@ -1004,43 +1103,43 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')dhcapsCloseD
       </a>
       <a href="/products/cotton-sports-cap/" class="sg-product-card">
         <div class="sg-product-img" style="background:#f5f5f3;">
-          <img src="https://www.dhcaps.com/wp-content/uploads/2024/06/Structured-Sports-Hat-10-1024x1024.webp" alt="Cotton Sports Cap manufacturer Bangladesh" loading="lazy">
+          <img src="/wp-content/uploads/hat-covers/100pct-cotton-sports-cap.png" alt="100% Cotton Sports Cap manufacturer Bangladesh" loading="lazy">
         </div>
         <div class="sg-product-info">
-          <p class="sg-product-name">Cotton Sports Cap</p>
+          <p class="sg-product-name">100% Cotton Sports Cap</p>
           <p class="sg-product-desc">100% cotton · 6-panel · Curved brim</p>
         </div>
       </a>
       <a href="/products/pigment-dyed-washed-hats/" class="sg-product-card">
         <div class="sg-product-img" style="background:#f5f5f3;">
-          <img src="https://www.dhcaps.com/wp-content/uploads/2024/05/Hats-Category-4-1024x1024.webp" alt="Pigment Dyed Washed manufacturer Bangladesh" loading="lazy">
+          <img src="/wp-content/uploads/hat-covers/Pigment Dyed Washed Hats.webp" alt="Pigment Dyed Washed Hats manufacturer Bangladesh" loading="lazy">
         </div>
         <div class="sg-product-info">
-          <p class="sg-product-name">Pigment Dyed Washed</p>
+          <p class="sg-product-name">Pigment Dyed Washed Hats</p>
           <p class="sg-product-desc">Vintage finish · Unstructured · Low profile</p>
         </div>
       </a>
       <a href="/products/polyester-hats-with-sublimation-print/" class="sg-product-card">
         <div class="sg-product-img" style="background:#f5f5f3;">
-          <img src="https://www.dhcaps.com/wp-content/uploads/2024/05/Hat-Category-Photo-1-1024x1024.webp" alt="Sublimation Print manufacturer Bangladesh" loading="lazy">
+          <img src="/wp-content/uploads/hat-covers/Polyester Hats with sublimation print.webp" alt="Polyester Hats With Sublimation Print manufacturer Bangladesh" loading="lazy">
         </div>
         <div class="sg-product-info">
-          <p class="sg-product-name">Sublimation Print</p>
+          <p class="sg-product-name">Polyester Hats With Sublimation Print</p>
           <p class="sg-product-desc">All-over print · 100% polyester</p>
         </div>
       </a>
       <a href="/products/mesh-trucker-hats-with-side-tape/" class="sg-product-card">
-        <div class="sg-product-img" style="background:#F5F0FF;">
-          <img src="https://www.dhcaps.com/wp-content/uploads/2024/05/Hat-Category-Photo-2-1024x1024.webp" alt="Mesh Trucker Side Tape manufacturer Bangladesh" loading="lazy">
+        <div class="sg-product-img" style="background:#f5f5f3;">
+          <img src="/wp-content/uploads/hat-covers/Mesh Trucker Hats with side tape.webp" alt="Mesh Trucker Hats With Side Tape manufacturer Bangladesh" loading="lazy">
         </div>
         <div class="sg-product-info">
-          <p class="sg-product-name">Mesh Trucker Side Tape</p>
-          <p class="sg-product-desc">Sports mesh · Contrast tape</p>
+          <p class="sg-product-name">Mesh Trucker Hats With Side Tape</p>
+          <p class="sg-product-desc">Sports mesh · Contrast tape panels</p>
         </div>
       </a>
       <a href="/products/promotional-caps/" class="sg-product-card">
-        <div class="sg-product-img" style="background:#F0FFF4;">
-          <img src="https://www.dhcaps.com/wp-content/uploads/2024/05/Website-hat-photo-9-1024x1024.webp" alt="Promotional Caps manufacturer Bangladesh" loading="lazy">
+        <div class="sg-product-img" style="background:#f5f5f3;">
+          <img src="/wp-content/uploads/hat-covers/Promotional hats.webp" alt="Promotional Caps manufacturer Bangladesh" loading="lazy">
         </div>
         <div class="sg-product-info">
           <p class="sg-product-name">Promotional Caps</p>
@@ -1048,8 +1147,8 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')dhcapsCloseD
         </div>
       </a>
       <a href="/products/size-fitted-hats/" class="sg-product-card">
-        <div class="sg-product-img" style="background:#FFF8F0;">
-          <img src="https://www.dhcaps.com/wp-content/uploads/2024/05/Hat-Category-Photo-6-1024x1024.webp" alt="Size Fitted Hats manufacturer Bangladesh" loading="lazy">
+        <div class="sg-product-img" style="background:#f5f5f3;">
+          <img src="/wp-content/uploads/hat-covers/Size Fitted Hats.webp" alt="Size Fitted Hats manufacturer Bangladesh" loading="lazy">
         </div>
         <div class="sg-product-info">
           <p class="sg-product-name">Size Fitted Hats</p>
@@ -1124,7 +1223,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')dhcapsCloseD
         </table>
         <div style="margin-top:32px;">
           <a href="https://contact.dhcaps.com/" class="sg-btn-primary" style="margin-right:12px;">Get a Quote</a>
-          <a href="https://wa.me/8801711525227?text=Hi%2C%20I%27m%20a%20Singapore%20buyer%20interested%20in%20custom%20hats%20from%20DHCAPS.%20Can%20you%20send%20me%20a%20quote%3F" target="_blank" rel="noopener" style="font-size:.85rem;color:#0774c2;font-weight:600;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>&nbsp; WhatsApp Us</a>
+          <a href="https://wa.me/8801711525227?text=Hi%2C%20I%27m%20a%20Singapore%20buyer%20interested%20in%20custom%20hats%20from%20DHCAPS.%20Can%20you%20send%20me%20a%20quote%3F" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#ffffff;font-size:.9rem;font-weight:700;padding:14px 22px;border-radius:3px;text-decoration:none;transition:background .2s;" onmouseover="this.style.background='#1da851'" onmouseout="this.style.background='#25D366'"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp Us</a>
         </div>
       </div>
 
@@ -1159,10 +1258,11 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')dhcapsCloseD
 <!-- ══════════════════════════════════════════════════════════
      7. FAQ
 ══════════════════════════════════════════════════════════════ -->
-<section class="sg-section sg-section-grey">
+<section class="sg-section sg-section-faq">
   <div class="sg-outer">
     <span class="sg-eyebrow">Questions</span>
     <h2 class="sg-h2">Frequently asked</h2>
+    <p class="sg-section-sub">Everything Singapore buyers need to know before placing an order.</p>
     <div class="sg-faq">
       
       <details>
@@ -1211,7 +1311,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')dhcapsCloseD
       <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp
     </a>
   </div>
-  <p style="margin:28px 0 0;"><a href="/factory-profile/" style="color:#555;font-size:.82rem;text-decoration:underline;">See our factory &amp; quality standards &#8594;</a></p>
+  <p style="margin:28px 0 0;"><a href="/factory-profile/" style="color:rgba(90,159,227,.75);font-size:.84rem;text-decoration:none;border-bottom:1px solid rgba(90,159,227,.35);padding-bottom:2px;transition:color .2s,border-color .2s;" onmouseover="this.style.color='#5A9FE3';this.style.borderColor='#5A9FE3'" onmouseout="this.style.color='rgba(90,159,227,.75)';this.style.borderColor='rgba(90,159,227,.35)'">See our factory &amp; quality standards &#8594;</a></p>
 </div>
 
 </main><!--/.neve-main-->
