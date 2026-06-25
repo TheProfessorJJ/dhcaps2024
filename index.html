@@ -239,10 +239,11 @@ gtag("config", "G-PQGW4M714C");</script>
   #dhcaps-header{--dhcaps-header-total:92px;}
   #dhcaps-utility{padding:4px 0;}
   .dhcaps-utility-inner{padding:0 10px;gap:8px;min-height:24px;}
-  .dhcaps-utility-left{gap:6px;font-size:.62rem;line-height:1.1;}
+  .dhcaps-utility-left{width:100%;justify-content:space-between;gap:8px;font-size:.62rem;line-height:1.1;}
   .dhcaps-utility-left a{white-space:nowrap;}
-  .dhcaps-sep{padding:0 1px;}
-  .dhcaps-quote-btn{padding:5px 10px;font-size:.64rem;border-radius:3px;}
+  .dhcaps-sep{display:none;}
+  #dhcaps-utility .dhcaps-quote-btn{display:none!important;}
+  .dhcaps-utility-inner > div:last-child{display:none!important;}
   .dhcaps-utility-inner > div:last-child::after{display:none;}
   #dhcaps-logo-row{display:flex;justify-content:space-between;align-items:center;padding:10px 16px;}
   #dhcaps-logo-row .dhcaps-brand{gap:10px;}
