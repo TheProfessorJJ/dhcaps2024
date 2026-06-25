@@ -179,9 +179,9 @@ gtag("config", "G-PQGW4M714C");</script>
 #dhcaps-logo-row .dhcaps-logo-lockup{display:block;width:314px;max-width:min(314px,calc(100vw - 96px));height:auto;object-fit:contain;}
 .dhcaps-nav-brand .dhcaps-logo-lockup{width:210px;max-width:210px;height:auto;}
 .dhcaps-drawer-lockup{display:block;width:205px;max-width:100%;height:auto;object-fit:contain;}
-#dhcaps-sticky .s-brand{gap:0;}
+#dhcaps-sticky .s-brand{gap:0;min-width:230px;}
 #dhcaps-sticky .s-brand > img{display:none;}
-#dhcaps-sticky .s-brand-lockup{display:block;width:168px;height:auto;object-fit:contain;}
+#dhcaps-sticky .s-brand-lockup{display:block;width:246px;max-width:246px;height:auto;max-height:48px;object-fit:contain;}
 
 .dhcaps-brand-text{display:flex;flex-direction:column;min-width:0;}
 #dhcaps-logo-row .dhcaps-brand-name{font-family:'Prata',Georgia,serif;font-size:1.38rem;font-weight:400;color:#0B1F3B;line-height:1.02;letter-spacing:0;white-space:nowrap;}
@@ -667,7 +667,347 @@ gtag("config", "G-PQGW4M714C");</script>
   .codex-home-hero__proof-item:last-child{border-bottom:none;}
 }
 
-</style>
+
+
+/* -- DHCAPS MANUFACTURING PROCESS -- */
+.dhcaps-process{
+  --codex-section-x:clamp(28px,3.1vw,60px);
+  --codex-container:1500px;
+  --process-navy:#061936;
+  --process-blue:#0038B8;
+  --process-gold:#bd870f;
+  --process-muted:#526174;
+  --process-line:rgba(189,135,15,.22);
+  font-family:Roboto,Arial,sans-serif;
+  color:var(--process-navy);
+  background:linear-gradient(180deg,#f7f3ec 0%,#faf8f5 18%,#fff 100%);
+  padding:clamp(56px,3.7vw,70px) 0 clamp(64px,4vw,78px);
+  overflow:hidden;
+}
+.dhcaps-process__inner{
+  width:min(calc(100% - (var(--codex-section-x) * 2)),var(--codex-container));
+  max-width:var(--codex-container);
+  margin:0 auto;
+}
+.dhcaps-process__header{
+  max-width:720px;
+  margin:0 0 clamp(22px,1.75vw,30px);
+  text-align:left;
+}
+.dhcaps-process__eyebrow{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin:0 0 9px;
+  color:var(--process-gold);
+  font-size:clamp(11.5px,.72vw,13px);
+  font-weight:800;
+  letter-spacing:.13em;
+  line-height:1.25;
+  text-transform:uppercase;
+}
+.dhcaps-process__eyebrow::before{
+  content:"";
+  width:42px;
+  height:1px;
+  background:rgba(189,135,15,.72);
+}
+.dhcaps-process__eyebrow::after{display:none;}
+.dhcaps-process__title{
+  margin:0;
+  font-family:Prata,Georgia,serif;
+  font-size:clamp(28px,2.35vw,42px);
+  line-height:1.14;
+  letter-spacing:0;
+  color:var(--process-navy);
+  font-weight:400;
+}
+.dhcaps-process__intro{
+  max-width:690px;
+  margin:11px 0 0;
+  color:#23314a;
+  font-size:clamp(14.5px,.9vw,16px);
+  line-height:1.5;
+}
+.dhcaps-process__divider{
+  display:block;
+  width:58px;
+  height:1px;
+  margin:13px 0 0;
+  background:rgba(189,135,15,.5);
+}
+.dhcaps-process__steps{
+  position:relative;
+  display:grid;
+  grid-template-columns:repeat(6,minmax(0,1fr));
+  gap:clamp(14px,1.18vw,22px);
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+.dhcaps-process__steps::before{
+  content:"";
+  position:absolute;
+  top:73px;
+  left:5.5%;
+  right:5.5%;
+  height:1px;
+  background:linear-gradient(90deg,transparent,var(--process-line) 9%,var(--process-line) 91%,transparent);
+}
+.dhcaps-process__step{
+  position:relative;
+  z-index:1;
+  display:grid;
+  grid-template-rows:auto 1fr;
+  min-width:0;
+  text-align:left;
+}
+.dhcaps-process__photo{
+  position:relative;
+  width:clamp(126px,7.7vw,146px);
+  aspect-ratio:1;
+  margin:0 0 18px;
+  border-radius:50%;
+  border:5px solid rgba(255,255,255,.96);
+  background:#fff;
+  box-shadow:0 10px 22px rgba(6,25,54,.1),0 0 0 1px rgba(6,25,54,.08);
+  transition:transform .18s ease,box-shadow .18s ease;
+}
+.dhcaps-process__photo img{
+  display:block;
+  width:100%;
+  height:100%;
+  border-radius:50%;
+  object-fit:cover;
+}
+.dhcaps-process__number{
+  position:absolute;
+  top:-7px;
+  left:-6px;
+  display:grid;
+  place-items:center;
+  width:30px;
+  height:30px;
+  border-radius:50%;
+  background:linear-gradient(145deg,#d2a329,#a97606);
+  color:#fff;
+  font-size:12.5px;
+  font-weight:900;
+  box-shadow:0 6px 13px rgba(128,84,0,.18);
+}
+.dhcaps-process__icon{
+  position:absolute;
+  right:-3px;
+  bottom:-7px;
+  display:grid;
+  place-items:center;
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  border:2px solid rgba(255,255,255,.94);
+  background:#061936;
+  color:var(--process-gold);
+  box-shadow:0 8px 16px rgba(6,25,54,.13);
+  transition:background .18s ease,color .18s ease;
+}
+.dhcaps-process__icon svg{
+  width:18px;
+  height:18px;
+}
+.dhcaps-process__body{
+  display:grid;
+  grid-template-rows:44px 80px 16px 34px;
+  align-content:start;
+}
+.dhcaps-process__step-title{
+  margin:0;
+  color:var(--process-navy);
+  font-size:clamp(15.5px,.96vw,17.5px);
+  line-height:1.18;
+  font-weight:900;
+}
+.dhcaps-process__copy{
+  margin:0;
+  max-width:215px;
+  color:#1f2937;
+  font-size:clamp(12.25px,.78vw,13.5px);
+  line-height:1.4;
+}
+.dhcaps-process__accent{
+  display:block;
+  align-self:end;
+  width:32px;
+  height:1px;
+  background:rgba(189,135,15,.3);
+}
+.dhcaps-process__proof{
+  display:flex;
+  align-items:flex-start;
+  justify-content:flex-start;
+  gap:7px;
+  max-width:215px;
+  margin:0;
+  color:#15223a;
+  font-size:clamp(11.75px,.74vw,13px);
+  line-height:1.25;
+  font-weight:800;
+}
+.dhcaps-process__check{
+  display:grid;
+  place-items:center;
+  flex:0 0 16px;
+  width:16px;
+  height:16px;
+  margin-top:0;
+  border-radius:50%;
+  background:var(--process-gold);
+  color:#fff;
+}
+.dhcaps-process__check svg{
+  width:9px;
+  height:9px;
+}
+@media (hover:hover) and (pointer:fine){
+  .dhcaps-process__step:hover .dhcaps-process__photo{
+    transform:translateY(-3px);
+    box-shadow:0 14px 28px rgba(6,25,54,.13),0 0 0 1px rgba(189,135,15,.18);
+  }
+  .dhcaps-process__step:hover .dhcaps-process__icon{
+    background:#09244d;
+    color:#d8a72c;
+  }
+}
+@media (prefers-reduced-motion:reduce){
+  .dhcaps-process__photo,
+  .dhcaps-process__icon{
+    transition:none;
+  }
+}
+@media (max-width:1180px){
+  .dhcaps-process{
+    --codex-section-x:clamp(22px,3vw,44px);
+    padding:clamp(44px,4.5vw,56px) 0 clamp(48px,5vw,64px);
+  }
+  .dhcaps-process__header{
+    max-width:760px;
+    margin-bottom:24px;
+  }
+  .dhcaps-process__steps{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:24px 30px;
+  }
+  .dhcaps-process__steps::before{
+    display:none;
+  }
+  .dhcaps-process__photo{
+    width:116px;
+    margin-bottom:16px;
+  }
+  .dhcaps-process__body{
+    grid-template-rows:34px 58px 14px 28px;
+  }
+  .dhcaps-process__copy,
+  .dhcaps-process__proof{
+    max-width:250px;
+  }
+}
+@media (max-width:760px){
+  .dhcaps-process{
+    --codex-section-x:16px;
+    background:linear-gradient(180deg,#f8f3ec 0%,#faf8f5 16%,#fff 100%);
+    padding:36px 0 44px;
+  }
+  .dhcaps-process__header{
+    margin-bottom:18px;
+  }
+  .dhcaps-process__eyebrow{
+    gap:8px;
+    font-size:10.5px;
+    letter-spacing:.095em;
+    margin-bottom:8px;
+  }
+  .dhcaps-process__eyebrow::before{
+    width:24px;
+  }
+  .dhcaps-process__title{
+    font-size:clamp(25px,7vw,31px);
+    line-height:1.15;
+  }
+  .dhcaps-process__intro{
+    font-size:13.25px;
+    line-height:1.43;
+    margin-top:9px;
+  }
+  .dhcaps-process__divider{
+    width:48px;
+    margin-top:10px;
+  }
+  .dhcaps-process__steps{
+    display:block;
+    padding-left:0;
+  }
+  .dhcaps-process__steps::before{
+    display:block;
+    top:9px;
+    bottom:9px;
+    left:38px;
+    right:auto;
+    width:1px;
+    height:auto;
+    background:linear-gradient(180deg,transparent,var(--process-line) 8%,var(--process-line) 92%,transparent);
+  }
+  .dhcaps-process__step{
+    display:grid;
+    grid-template-columns:76px minmax(0,1fr);
+    grid-template-rows:auto;
+    gap:12px;
+    align-items:start;
+    padding:0 0 12px;
+  }
+  .dhcaps-process__step:last-child{
+    padding-bottom:0;
+  }
+  .dhcaps-process__photo{
+    width:76px;
+    border-width:4px;
+    margin:0;
+  }
+  .dhcaps-process__number{
+    width:23px;
+    height:23px;
+    top:-5px;
+    left:-4px;
+    font-size:10px;
+  }
+  .dhcaps-process__icon{
+    width:25px;
+    height:25px;
+    right:-4px;
+    bottom:-4px;
+  }
+  .dhcaps-process__icon svg{
+    width:13.5px;
+    height:13.5px;
+  }
+  .dhcaps-process__body{
+    display:block;
+    padding-top:1px;
+  }
+  .dhcaps-process__step-title{
+    font-size:15.25px;
+    line-height:1.2;
+    margin:0 0 4px;
+  }
+  .dhcaps-process__copy{
+    max-width:none;
+    font-size:12.25px;
+    line-height:1.34;
+  }
+  .dhcaps-process__accent,
+  .dhcaps-process__proof{
+    display:none;
+  }
+}</style>
 
 <!-- Utility bar -->
 <div id="dhcaps-utility">
@@ -828,9 +1168,10 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')dhcapsCloseD
 <style>
 #dhcaps-sticky{position:fixed;top:0;left:0;right:0;z-index:8000;background:#fff;border-bottom:1px solid #eaeaea;box-shadow:0 2px 16px rgba(0,0,0,.07);transform:translateY(-100%);transition:transform .28s ease;padding:0 24px;}
 #dhcaps-sticky.visible{transform:translateY(0);}
-#dhcaps-sticky-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;height:54px;gap:16px;}
-#dhcaps-sticky .s-brand{display:flex;align-items:center;gap:7px;text-decoration:none;flex-shrink:0;}
-#dhcaps-sticky .s-brand img{width:31px;height:31px;object-fit:contain;}
+#dhcaps-sticky-inner{max-width:1500px;margin:0 auto;display:flex;align-items:center;height:58px;gap:18px;}
+#dhcaps-sticky .s-brand{display:flex;align-items:center;gap:7px;text-decoration:none;flex-shrink:0;min-width:230px;}
+#dhcaps-sticky .s-brand img:not(.s-brand-lockup){width:31px;height:31px;object-fit:contain;}
+#dhcaps-sticky .s-brand img.s-brand-lockup{display:block;width:246px;max-width:246px;height:auto;max-height:48px;object-fit:contain;}
 #dhcaps-sticky .s-brand-text{display:flex;flex-direction:column;}
 #dhcaps-sticky .s-brand-name{font-family:"Prata",Georgia,serif;font-size:.88rem;line-height:1.03;color:#0B1F3B;white-space:nowrap;}
 #dhcaps-sticky .s-brand-tagline{font-family:"Roboto",Arial,sans-serif;font-size:7px;line-height:1.2;letter-spacing:.075em;text-transform:uppercase;color:#58657a;margin-top:1px;white-space:nowrap;}
@@ -849,7 +1190,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')dhcapsCloseD
 #dhcaps-sticky .s-dd a:hover{background:#fafafa;color:#420000;}
 #dhcaps-sticky .s-dd-sep{border:none;border-top:0.5px solid #f0f0f0;margin:5px 12px;}
 #dhcaps-sticky .s-menu>li.has-dd:hover .s-dd{display:block;}
-#dhcaps-sticky .s-quote{background:#0038B8;color:#fff;font-weight:700;font-size:9px;padding:7px 15px;border-radius:5px;text-decoration:none;letter-spacing:.075em;text-transform:uppercase;white-space:nowrap;flex-shrink:0;}
+#dhcaps-sticky .s-quote{background:#0038B8;color:#fff;font-weight:700;font-size:9px;padding:8px 15px;border-radius:5px;text-decoration:none;letter-spacing:.075em;text-transform:uppercase;white-space:nowrap;flex-shrink:0;}
 #dhcaps-sticky .s-quote:hover{background:#002f99;}
 @media(max-width:960px){#dhcaps-sticky{display:none;}}
 </style>
@@ -1032,6 +1373,98 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')dhcapsCloseD
 })();
 </script>
 <!-- DHCAPS ITERATION-4 HERO END -->
+
+<section class="dhcaps-process" aria-labelledby="dhcaps-process-title">
+  <div class="dhcaps-process__inner">
+    <header class="dhcaps-process__header">
+      <p class="dhcaps-process__eyebrow">OUR MANUFACTURING PROCESS</p>
+      <h2 class="dhcaps-process__title" id="dhcaps-process-title">From Concept to Container &mdash;<br>We&rsquo;ve Got You Covered</h2>
+      <p class="dhcaps-process__intro">A transparent, efficient manufacturing workflow designed to deliver premium custom headwear on time, every time.</p>
+      <span class="dhcaps-process__divider" aria-hidden="true"></span>
+    </header>
+    <ol class="dhcaps-process__steps">
+      <li class="dhcaps-process__step">
+        <figure class="dhcaps-process__photo">
+          <img src="assets/manufacturing-process/design-submission-360.webp" srcset="assets/manufacturing-process/design-submission-240.webp 240w, assets/manufacturing-process/design-submission-360.webp 360w" sizes="(max-width: 760px) 76px, (max-width: 1180px) 116px, 146px" width="360" height="360" loading="lazy" decoding="async" alt="Design submission for a custom snapback cap with tech pack and reference images">
+          <span class="dhcaps-process__number">01</span>
+          <span class="dhcaps-process__icon"><svg viewbox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 20l4.2-1 10-10a2.1 2.1 0 0 0-3-3l-10 10L4 20Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="m13.5 6.5 4 4M4 20h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+        </figure>
+        <div class="dhcaps-process__body">
+          <h3 class="dhcaps-process__step-title">Design Submission</h3>
+          <p class="dhcaps-process__copy">Send ideas, tech packs, sketches or reference images. We review the details before production planning.</p>
+          <span class="dhcaps-process__accent" aria-hidden="true"></span>
+          <p class="dhcaps-process__proof"><span class="dhcaps-process__check"><svg viewbox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 12 4 4 8-8" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Your vision. Our expertise.</span></p>
+        </div>
+      </li>
+      <li class="dhcaps-process__step">
+        <figure class="dhcaps-process__photo">
+          <img src="assets/manufacturing-process/sample-development-360.webp" srcset="assets/manufacturing-process/sample-development-240.webp 240w, assets/manufacturing-process/sample-development-360.webp 360w" sizes="(max-width: 760px) 76px, (max-width: 1180px) 116px, 146px" width="360" height="360" loading="lazy" decoding="async" alt="Sample development cap with fabric swatches and construction details">
+          <span class="dhcaps-process__number">02</span>
+          <span class="dhcaps-process__icon"><svg viewbox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 15c1.4-4.4 4.1-6.6 8-6.6s6.6 2.2 8 6.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M5 15h14l2 2H3l2-2Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 8.4V15" stroke="currentColor" stroke-width="1.5"/></svg></span>
+        </figure>
+        <div class="dhcaps-process__body">
+          <h3 class="dhcaps-process__step-title">Sample Development</h3>
+          <p class="dhcaps-process__copy">We create a physical sample to verify fit, materials, construction and branding.</p>
+          <span class="dhcaps-process__accent" aria-hidden="true"></span>
+          <p class="dhcaps-process__proof"><span class="dhcaps-process__check"><svg viewbox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 12 4 4 8-8" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>See it. Feel it. Perfect it.</span></p>
+        </div>
+      </li>
+      <li class="dhcaps-process__step">
+        <figure class="dhcaps-process__photo">
+          <img src="assets/manufacturing-process/sample-approval-360.webp" srcset="assets/manufacturing-process/sample-approval-240.webp 240w, assets/manufacturing-process/sample-approval-360.webp 360w" sizes="(max-width: 760px) 76px, (max-width: 1180px) 116px, 146px" width="360" height="360" loading="lazy" decoding="async" alt="Approved custom cap sample with inspection notes">
+          <span class="dhcaps-process__number">03</span>
+          <span class="dhcaps-process__icon"><svg viewbox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3 5 6v5c0 4.5 2.9 8.4 7 10 4.1-1.6 7-5.5 7-10V6l-7-3Z" stroke="currentColor" stroke-width="1.8"/><path d="m8.8 12 2.1 2.1 4.6-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </figure>
+        <div class="dhcaps-process__body">
+          <h3 class="dhcaps-process__step-title">Sample Approval</h3>
+          <p class="dhcaps-process__copy">Review the sample, request revisions if needed, then approve before bulk production.</p>
+          <span class="dhcaps-process__accent" aria-hidden="true"></span>
+          <p class="dhcaps-process__proof"><span class="dhcaps-process__check"><svg viewbox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 12 4 4 8-8" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Your approval. Our commitment.</span></p>
+        </div>
+      </li>
+      <li class="dhcaps-process__step">
+        <figure class="dhcaps-process__photo">
+          <img src="assets/manufacturing-process/bulk-production-360.webp" srcset="assets/manufacturing-process/bulk-production-240.webp 240w, assets/manufacturing-process/bulk-production-360.webp 360w" sizes="(max-width: 760px) 76px, (max-width: 1180px) 116px, 146px" width="360" height="360" loading="lazy" decoding="async" alt="Bulk cap production on embroidery machines">
+          <span class="dhcaps-process__number">04</span>
+          <span class="dhcaps-process__icon"><svg viewbox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 20V9l5 3V8l5 4V7l6 4v9H4Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M7 17h2m3 0h2m3 0h2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+        </figure>
+        <div class="dhcaps-process__body">
+          <h3 class="dhcaps-process__step-title">Bulk Production</h3>
+          <p class="dhcaps-process__copy">Approved orders move into controlled high-capacity production.</p>
+          <span class="dhcaps-process__accent" aria-hidden="true"></span>
+          <p class="dhcaps-process__proof"><span class="dhcaps-process__check"><svg viewbox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 12 4 4 8-8" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Consistent quality. On-time delivery.</span></p>
+        </div>
+      </li>
+      <li class="dhcaps-process__step">
+        <figure class="dhcaps-process__photo">
+          <img src="assets/manufacturing-process/quality-inspection-360.webp" srcset="assets/manufacturing-process/quality-inspection-240.webp 240w, assets/manufacturing-process/quality-inspection-360.webp 360w" sizes="(max-width: 760px) 76px, (max-width: 1180px) 116px, 146px" width="360" height="360" loading="lazy" decoding="async" alt="Gloved inspection of cap construction and stitching">
+          <span class="dhcaps-process__number">05</span>
+          <span class="dhcaps-process__icon"><svg viewbox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3 5 6v5c0 4.5 2.9 8.4 7 10 4.1-1.6 7-5.5 7-10V6l-7-3Z" stroke="currentColor" stroke-width="1.8"/><path d="m9 12 2 2 4-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </figure>
+        <div class="dhcaps-process__body">
+          <h3 class="dhcaps-process__step-title">Quality Inspection</h3>
+          <p class="dhcaps-process__copy">Each order passes through multiple quality checkpoints before packing.</p>
+          <span class="dhcaps-process__accent" aria-hidden="true"></span>
+          <p class="dhcaps-process__proof"><span class="dhcaps-process__check"><svg viewbox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 12 4 4 8-8" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Quality you can trust.</span></p>
+        </div>
+      </li>
+      <li class="dhcaps-process__step">
+        <figure class="dhcaps-process__photo">
+          <img src="assets/manufacturing-process/packing-shipping-360.webp" srcset="assets/manufacturing-process/packing-shipping-240.webp 240w, assets/manufacturing-process/packing-shipping-360.webp 360w" sizes="(max-width: 760px) 76px, (max-width: 1180px) 116px, 146px" width="360" height="360" loading="lazy" decoding="async" alt="DHCAPS export packing and international shipping logistics">
+          <span class="dhcaps-process__number">06</span>
+          <span class="dhcaps-process__icon"><svg viewbox="0 0 24 24" fill="none" aria-hidden="true"><path d="m12 3 8 4-8 4-8-4 8-4Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M4 7v10l8 4 8-4V7M12 11v10" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
+        </figure>
+        <div class="dhcaps-process__body">
+          <h3 class="dhcaps-process__step-title">Packing &amp; Shipping</h3>
+          <p class="dhcaps-process__copy">Finished goods are securely packed and shipped worldwide.</p>
+          <span class="dhcaps-process__accent" aria-hidden="true"></span>
+          <p class="dhcaps-process__proof"><span class="dhcaps-process__check"><svg viewbox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 12 4 4 8-8" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Delivered safely. Worldwide.</span></p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
 	<main id="content" class="neve-main">
 
 		<div data-elementor-type="wp-page" data-elementor-id="3430" class="elementor elementor-3430" data-elementor-post-type="page">
